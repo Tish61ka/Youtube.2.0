@@ -10,7 +10,7 @@ body{
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: 10vw 25vw 25vw 1fr 100px;
     grid-gap: 2%;
-    background-color: black;
+    background-color: rgb(221, 202, 168);
 }
 
 /* HEADER */
@@ -62,6 +62,7 @@ header{
 }
 .header__menu {
 	display: block;
+    border: 1px black solid;
 }
 .header__nav.open-menu{
     left:0;
@@ -76,6 +77,7 @@ header{
     height: 35px;
     display: block;
     margin-left: 10px;
+    top: 2vh;
    }
    .menu-burger__header:hover{
        cursor: pointer;
@@ -253,6 +255,9 @@ footer{
         grid-template-rows: repeat(4, 40vw);
         grid-gap: 15px;
     }
+    .f{
+        background: transparent;
+    }
 }
 
 /* very small phone*/
@@ -274,6 +279,9 @@ footer{
     .b{
         display: grid;
         grid-column: 1/2;
+    }
+    .f{
+        background: transparent;
     }
     .container{
         grid-column: 1/2;
