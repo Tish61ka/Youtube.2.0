@@ -240,6 +240,9 @@ footer{
     .container{
         grid-template-rows: repeat(4, 40vw);
     }
+    .f{
+        background: transparent;
+    }
 }
 
 /*smartphone*/
