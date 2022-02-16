@@ -27,8 +27,8 @@
                         <li><a href="" class="menu__item">Контакты</a></li>
                     </ul>
                 </nav>
-                <img src="<?=$_SESSION['user']['avatar']?>" alt=""> 
-                <a href="../output/profile.php">Профиль</a>
+                
+                <a href="../output/profile.php"><img src="<?= "../" . $_SESSION['user']['avatar']?>" width="40" height="40" style="border-radius: 50px;"></a>
                 <a href="../functions/logout.php">Выход</a>
              </div>
     </header>
