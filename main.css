@@ -43,14 +43,16 @@ header{
 	text-transform: uppercase;
 	text-decoration: none;
 }
-.enter{
+.log_in{
     grid-column: 12/13;
+}
+.enter{
     display: flex;
     background: transparent;
     border: 2px solid #9B59B6;
     float: right;
-    margin-top: 2.7vw;
     margin-left: 2vw;
+    margin-top: -2.3vw;
     width: 8vw;
     height: 3vw;
 }
