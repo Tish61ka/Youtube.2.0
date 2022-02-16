@@ -8,7 +8,7 @@
 body{
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 10vw 25vw 25vw 1fr 100px;
+    grid-template-rows: 100px 25vw 25vw 1fr 100px;
     grid-gap: 2%;
     background-color: white;
 }
@@ -45,16 +45,17 @@ header{
 }
 .log_in{
     grid-column: 12/13;
+    width: 100px;
+    height: 36px;
 }
 .enter{
     display: flex;
     background: transparent;
     border: 2px solid #9B59B6;
     float: right;
-    margin-left: 2vw;
-    margin-top: -2.3vw;
-    width: 8vw;
-    height: 3vw;
+    margin: 36px 0px 0px 36px;
+    width: 100px;
+    height: 36px;
 }
 .enter:hover{
     cursor: pointer;
@@ -67,7 +68,7 @@ header{
     margin-top: 0.5vw;
     margin-left: 0.3vw;
     color: #9B59B6;
-    font-size: 1.3vw;
+    font-size: 16px;
 }
 .content-wrapper{
     margin-top: 78px;
@@ -232,7 +233,7 @@ footer{
 
 @media (min-width: 1200px) and (max-width: 1640px){
     body{
-        grid-template-rows: 9vw 25vw 25vw 1fr 100px;
+        grid-template-rows: 120px 25vw 25vw 1fr 100px;
     }
     .container{
         grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
