@@ -10,11 +10,10 @@ body{
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: 10vw 25vw 25vw 1fr 100px;
     grid-gap: 2%;
-    background-color: rgb(221, 202, 168);
+    background-color: white;
 }
 
 /* HEADER */
-
 header{
     display: grid;
     grid-column: 1/13;
@@ -26,21 +25,47 @@ header{
     max-width: 1180px;
     margin: 0 auto;
     position: relative;
+    display: grid;
+    grid-template-columns: repeat(1, 12);
 }
 .header__nav {
     float:right;
 }
 .header__menu {
     display: flex;
-
+    justify-content: center;
 }
 .header__menu li {
 	list-style: none;
-	margin: 0px 0px 0px 36px;
+	margin: 45px 0px 0px 36px;
 	color: #000;
 	font-size: 16px;
 	text-transform: uppercase;
 	text-decoration: none;
+}
+.enter{
+    grid-column: 12/13;
+    display: flex;
+    background: transparent;
+    border: 2px solid #9B59B6;
+    float: right;
+    margin-top: 2.7vw;
+    margin-left: 2vw;
+    width: 8vw;
+    height: 3vw;
+}
+.enter:hover{
+    cursor: pointer;
+}
+.enter svg{
+    margin-top: 0.1vw;
+    margin-left: 0.3vw;
+}
+.enter p{
+    margin-top: 0.5vw;
+    margin-left: 0.3vw;
+    color: #9B59B6;
+    font-size: 1.3vw;
 }
 .content-wrapper{
     margin-top: 78px;
@@ -53,16 +78,17 @@ header{
 	position: absolute;
     top: 55px;
     left: 0;
-    background: rgb(245, 246, 246);
+    background: black;
     box-shadow: #ccc;
     width: 100%;
     box-shadow: 0 4px 2px -2px rgba(36, 36, 36, 0.37);
-    transition: all 0.4s ease;
+    transition: all 0.4s ease-in-out;
 	left:-100%;
 }
 .header__menu {
 	display: block;
-    border: 1px black solid;
+    border-top: 1px purple solid;
+    border-bottom: 1px purple solid;
 }
 .header__nav.open-menu{
     left:0;
@@ -116,17 +142,12 @@ header{
     transition: 0.4s;
 }
 
-header {
-	height: 60px;
-}
 .content-wrapper {
     margin-top: 48px;
 }
 .fixed-pade {
     overflow: hidden;
 }
-
-
 }
 .a{
     display: grid;
@@ -156,7 +177,7 @@ header {
 }
 .f{
     color: white;
-    background-color: orange;
+    background-color: black;
 }
 
 /* MAIN */
@@ -293,3 +314,7 @@ footer{
     }
 }
 
+video{
+    height: 400px;
+    width: 700px;
+}
