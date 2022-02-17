@@ -20,7 +20,7 @@
                         <a href="singin.php">Вход</a>
                     </li>
                     <li class="two_button_second_li">
-                        <a href="registration.php">Регестрация</a>
+                        <a href="registration.php">Регистрация</a>
                     </li>
                 </ul>
             </li>
