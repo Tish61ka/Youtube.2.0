@@ -32,7 +32,6 @@
             $_SESSION['message'] = "Регистрация прошла успешно!";
             header('Location: ../output/singin.php');
         }
-         
     }  
     else{
         $_SESSION['message'] = 'Пароли не совпадают!';
