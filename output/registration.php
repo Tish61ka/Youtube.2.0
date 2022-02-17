@@ -9,31 +9,58 @@
 </head>
 <body>
     <section>
-        <form action="../functions/registration_function.php" method="post" enctype="multipart/form-data">
-            <label for="">Никнейм:</label>
-            <input type="text" name="nick_name" placeholder="Введите ваш никнейм"> <br>
-
-            <label for="">Email:</label>
-            <input type="email" name="email" placeholder="Введите ваш Email"><br>
-
-            <label for="">Выберите аватар:</label>
-            <input type="file" name="avatar"> <br>
-
-            <label for="">Пароль:</label>
-            <input type="password" name="password" placeholder="Введите пароль"><br>
-
-            <label for="">Повтор пароля:</label>
-            <input type="password" name="password_confirm" placeholder="Введите пароль еще раз"><br>
-
-            <input type="submit" value="Зарегистрироваться">
-            <a href="../output/singin.php">Войти в существующий аккаунт</a>
-          <?php 
-            if ($_SESSION['message']){
-                echo '<p>' . $_SESSION['message'] . '</p>';
-            }
-            unset($_SESSION['message']);
-          ?> 
-        </form>
+        <ul class="bodu_ul">
+            <li class="top">
+                <div class="logo">GameHub</div>
+                <ul class="two_button">
+                    <li class="two_button_first_li">
+                        <a href="singin.php">Вход</a>
+                    </li>
+                    <li class="two_button_second_li">
+                        <a href="registration.php">Регестрация</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="bottom">
+                <form action="../functions/registration_function.php" method="post" enctype="multipart/form-data">
+                    <div>
+                        <label for="">Никнейм:</label>
+                        <input type="text" name="nick_name" placeholder="Введите ваш никнейм"> <br>
+                    </div>
+                    
+                    <div>
+                        <label for="">Email:</label>
+                        <input type="email" name="email" placeholder="Введите ваш Email"><br>
+                    </div>
+                    
+                    <div>
+                        <label for="a">Выберите аватар:</label>
+                        <input type="file" name="avatar" class="button_file" id="a"> <br>
+                        <button class="button_file_2">Выберете файл</button>
+                    </div>
+                    
+                    <div>
+                        <label for="">Пароль:</label>
+                        <input type="password" name="password" placeholder="Введите пароль" ><br>
+                    </div>
+        
+                    <div>
+                        <label for="">Повтор пароля:</label>
+                        <input type="password" name="password_confirm" placeholder="Введите пароль еще раз"><br>
+                    </div>
+                    <input type="submit" class="enter" value="Зарегистрироваться">
+                    
+                    <?php 
+                      if ($_SESSION['message']){
+                          echo '<p>' . $_SESSION['message'] . '</p>';
+                      }
+                      unset($_SESSION['message']);
+                    ?> 
+                </form>
+                <a href="index.html"><button class="go_back">На главную</button></a>
+            </li>
+        </ul>
+        
     </section>
 </body>
 </html>

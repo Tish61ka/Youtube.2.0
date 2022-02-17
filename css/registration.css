@@ -1,0 +1,122 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-decoration: none;
+    color: #bc13fe;
+}
+body{
+    background-color: #f4f4f4; 
+}
+.bodu_ul{
+    margin: 20vh auto 0;
+    background-color: black;
+    width: 600px;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px 0 rgba(0,0,0,0.4);
+}
+.top{
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #bc13fe;
+}
+.logo{
+    text-align: center;
+    width: 150px;
+    height: 50px;
+    border: 1px solid white;
+}
+.two_button{
+    display: flex;
+    flex-direction: row;
+    margin-top: 15px;
+}
+.two_button_first_li{
+    margin-right: 16px;
+}
+.two_button_second_li a{
+    border-bottom: 1px solid white;
+    padding-bottom: 10px;
+}
+.two_button_first_li a:hover{
+    padding-bottom: 10px;
+    border-bottom: 1px solid white;
+    transition: 0.2s;
+}
+.bottom{
+    padding: 20px;
+}
+form div{
+    display: flex;
+    flex-direction: column;
+}
+form div label{
+    margin: 7px 0;
+}
+form div input{
+    width: 280px;
+    height: 30px;
+    border: 1px solid #bc13fe;
+    background: transparent;
+}
+input[type=file]{
+    opacity: 0;
+	filter: alpha(opacity=0);
+    z-index: 2;
+}
+.button_file_2{
+    position: relative;
+    margin-top: -48px;
+    height: 30px;
+    width: 280px;
+    z-index: 0;
+    background: transparent;
+    border: 1px solid #bc13fe;
+}
+.button_file:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+.enter{
+    width: 150px;
+    height: 35px;
+    font-family: 'Krona One', sans-serif;
+    font-size: 15px;
+    background: #bc13fe;
+    box-shadow: 0px 5px #a23ca6, 0px 10px 10px rgba(0,0,0,0.25);
+    border: none;
+    border-radius: 5px;
+    transition: 300ms;
+    border: 1px solid #bc13fe;
+    color: black;
+    z-index: 1;
+}
+.enter:hover{
+    cursor: pointer;
+    transform: translateY(5px);
+    box-shadow: 0px 0px transparent, 0px 5px 10px rgba(0,0,0,0.25);
+}
+.go_back{
+    width: 150px;
+    height: 35px;
+    font-family: 'Krona One', sans-serif;
+    font-size: 15px;
+    background: #bc13fe;
+    box-shadow: 0px 5px #a23ca6, 0px 10px 10px rgba(0,0,0,0.25);
+    border: none;
+    border-radius: 5px;
+    transition: 300ms;
+    border: 1px solid #bc13fe;
+    color: black;
+    z-index: 2;
+    position: relative;
+    margin-top: 10px; 
+}
+.go_back:hover{
+    cursor: pointer;
+    transform: translateY(5px);
+    box-shadow: 0px 0px transparent, 0px 5px 10px rgba(0,0,0,0.25);
+}

@@ -12,23 +12,41 @@
 </head>
 <body>
     <section>
-        <form action="../functions/singin_function.php" method="post" enctype="multipart/form-data">
-            <label for="">Никнейм:</label>
-            <input type="text" name="nick_name" placeholder="Введите никнейм"> <br>
 
-            <label for="">Пароль</label>
-            <input type="password" name="password" placeholder="Введите пароль"><br>
-
-            <input type="submit" value="Войти">
-            <a href="../output/registration.php">Зарегистрироваться</a>
-            
-          <?php 
-            if ($_SESSION['message']){
-                echo '<p>' . $_SESSION['message'] . '</p>';
-            }
-            unset($_SESSION['message']);
-          ?> 
-        </form>
+    <ul class="bodu_ul">
+            <li class="top">
+                <div class="logo">GameHub</div>
+                <ul class="two_button">
+                    <li class="two_button_first_li">
+                        <a href="singin.php">Вход</a>
+                    </li>
+                    <li class="two_button_second_li">
+                        <a href="registration.php">Регестрация</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="bottom">
+            <form action="../functions/singin_function.php" method="post" enctype="multipart/form-data">
+                    <div>
+                        <label for="">Никнейм:</label>
+                        <input type="text" name="nick_name" placeholder="Введите никнейм"> <br>
+                    </div>
+                    
+                    <div>
+                        <label for="">Пароль</label>
+                        <input type="password" name="password" placeholder="Введите пароль"><br>
+                    </div>
+                    <input type="submit" value="Войти" class="enter">
+                    <?php 
+                        if ($_SESSION['message']){
+                            echo '<p>' . $_SESSION['message'] . '</p>';
+                        }
+                        unset($_SESSION['message']);
+                            ?> 
+                </form>
+                <a href="index.html"><button class="go_back">На главную</button></a>
+            </li>
+        </ul>
     </section>
 </body>
 </html>
