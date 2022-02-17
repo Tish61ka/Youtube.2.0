@@ -11,7 +11,7 @@
     <section>
         <ul class="bodu_ul">
             <li class="top">
-                <div class="logo">GameHub</div>
+                <a href="index.html"><div class="logo">GameHub</div></a>
                 <ul class="two_button">
                     <li class="two_button_first_li">
                         <a href="singin.php">Вход</a>
@@ -54,10 +54,9 @@
                       }
                       unset($_SESSION['message']);
                     ?> 
-                    <input type="submit" class="enter" value="Зарегистрироваться">
+                    <input type="submit" contenteditable spellcheck="false" class="enter" value="Зарегистрироваться">
                     
                 </form>
-                <a href="index.html"><button class="go_back">На главную</button></a>
             </li>
         </ul>
         
