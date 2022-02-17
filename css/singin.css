@@ -80,19 +80,53 @@ input[type=file]{
     transform: scale(1.1);
     cursor: pointer;
 }
+:root {  
+    --neon-text-color: #bc13fe;
+    --neon-border-color: #bc13fe;
+  }
 .enter{
+    font-size: 13rem;
+    font-weight: 200;
+    font-style: italic;
+    border-radius: 2rem;
+    text-transform: uppercase;
+    animation: flicker 1.5s infinite alternate;
     width: 150px;
     height: 35px;
     font-family: 'Krona One', sans-serif;
     font-size: 15px;
-    background: #bc13fe;
-    box-shadow: 0px 5px #a23ca6, 0px 10px 10px rgba(0,0,0,0.25);
     border: none;
-    border-radius: 5px;
     transition: 300ms;
     border: 1px solid #bc13fe;
-    color: black;
+    color: #bc13fe;
     z-index: 1;
+    background: transparent;
+}
+.enter::selection {
+    border-color: var(--neon-border-color);
+    color: var(--neon-text-color);
+  }
+  
+  .enter:focus {
+    outline: none;
+  }
+  @keyframes flicker {
+    
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        
+        box-shadow:
+            0 0 .5rem #fff,
+            inset 0 0 .5rem #fff,
+            0 0 .1rem var(--neon-border-color),
+            inset 0 0 .1rem var(--neon-border-color),
+            0 0 .1rem var(--neon-border-color),
+            inset 0 0 .1rem var(--neon-border-color);        
+    }
+    
+    20%, 24%, 55% {        
+        text-shadow: none;
+        box-shadow: none;
+    }    
 }
 .enter:hover{
     cursor: pointer;

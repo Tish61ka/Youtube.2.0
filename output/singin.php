@@ -36,13 +36,13 @@
                         <label for="">Пароль</label>
                         <input type="password" name="password" placeholder="Введите пароль"><br>
                     </div>
-                    <input type="submit" value="Войти" class="enter">
                     <?php 
                         if ($_SESSION['message']){
                             echo '<p>' . $_SESSION['message'] . '</p>';
                         }
                         unset($_SESSION['message']);
                             ?> 
+                    <input contenteditable spellcheck="false" type="submit" value="Войти" class="enter">
                 </form>
                 <a href="index.html"><button class="go_back">На главную</button></a>
             </li>

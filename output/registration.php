@@ -48,14 +48,14 @@
                         <label for="">Повтор пароля:</label>
                         <input type="password" name="password_confirm" placeholder="Введите пароль еще раз"><br>
                     </div>
-                    <input type="submit" class="enter" value="Зарегистрироваться">
-                    
                     <?php 
                       if ($_SESSION['message']){
                           echo '<p>' . $_SESSION['message'] . '</p>';
                       }
                       unset($_SESSION['message']);
                     ?> 
+                    <input type="submit" class="enter" value="Зарегистрироваться">
+                    
                 </form>
                 <a href="index.html"><button class="go_back">На главную</button></a>
             </li>
