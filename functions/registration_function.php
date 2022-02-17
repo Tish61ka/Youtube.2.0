@@ -14,10 +14,25 @@
         move_uploaded_file($_FILES['avatar']['tmp_name'], '../' . $avatar);
         header('Location: ../output/singin.php'); 
         // $password = md5($password);
-        $add_user = $connect->prepare("INSERT INTO `users`(`id`, `nick_name`, `email`, `avatar`, `password`) VALUES (NULL,'$nick_name','$email','$avatar','$password')");
-        $add_user->execute();
-        $_SESSION['message'] = "Регистрация прошла успешно!";
-        header('Location: ../output/singin.php'); 
+        $check_nick_name = $connect->prepare("SELECT * FROM `users` WHERE `nick_name` == '$nick_name'");
+        $check_nick_name->execute();
+        $check_email = $connect->prepare("SELECT * FROM `users` WHERE `email` == '$email'");
+        $check_email->execute();
+        if($check_nick_name == 1){
+            $_SESSION['message'] = "Такой никнейм уже используется!!!";
+            header('Location: ../output/registration.php'); 
+            if($check_email == 1){
+                $_SESSION['message'] = "Такая почта уже используется!!!";
+                header('Location: ../output/registration.php'); 
+            }
+        }
+        else{
+            $add_user = $connect->prepare("INSERT INTO `users`(`id`, `nick_name`, `email`, `avatar`, `password`) VALUES (NULL,'$nick_name','$email','$avatar','$password')");
+            $add_user->execute();
+            $_SESSION['message'] = "Регистрация прошла успешно!";
+            header('Location: ../output/singin.php');
+        }
+         
     }  
     else{
         $_SESSION['message'] = 'Пароли не совпадают!';

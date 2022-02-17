@@ -1,3 +1,6 @@
+<?php 
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -54,6 +57,7 @@
                       }
                       unset($_SESSION['message']);
                     ?> 
+
                     <input type="submit" contenteditable spellcheck="false" class="enter" value="Зарегистрироваться">
                     
                 </form>
