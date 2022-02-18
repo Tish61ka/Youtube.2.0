@@ -46,20 +46,20 @@
                         <label for="">Пароль:</label>
                         <input type="password" name="password" placeholder="Введите пароль" ><br>
                     </div>
-        
+
                     <div>
                         <label for="">Повтор пароля:</label>
                         <input type="password" name="password_confirm" placeholder="Введите пароль еще раз"><br>
                     </div>
-                    <?php 
-                      if ($_SESSION['message']){
-                          echo '<p>' . $_SESSION['message'] . '</p>';
-                      }
-                      unset($_SESSION['message']);
-                    ?> 
+                    
 
                     <input type="submit" contenteditable spellcheck="false" class="enter" value="Зарегистрироваться">
-                    
+                    <?php 
+                            if ($_SESSION['message']){
+                                echo '<div class="invalid-feedback">' . $_SESSION['message'] . '</div>';
+                            }
+                            unset($_SESSION['message']);
+                            ?> 
                 </form>
             </li>
         </ul>
