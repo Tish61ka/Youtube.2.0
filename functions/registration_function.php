@@ -18,7 +18,7 @@
         $check_nick_name->execute();
         $response = $check_nick_name->fetch(PDO::FETCH_ASSOC);
         if($response['nick_name']){
-            $_SESSION['message'] = "Такой никнейм занят!!!";
+            $_SESSION['message'] = "Такой никнейм занят, придумайте другой!";
             header('Location: ../output/registration.php'); 
         } 
         else{
@@ -26,7 +26,7 @@
             $check_email->execute();
             $response1 = $check_email->fetch(PDO::FETCH_ASSOC);
             if($response1['email']){
-                $_SESSION['message'] = "Такая почта уже используется!!!";
+                $_SESSION['message'] = "Такая почта уже используется, введите свою почту!";
                 header('Location: ../output/registration.php'); 
             }
             else{

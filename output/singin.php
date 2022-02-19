@@ -39,7 +39,7 @@
                     <input contenteditable spellcheck="false" type="submit" value="Войти" class="enter">
                     <?php 
                         if ($_SESSION['message']){
-                            echo '<p>' . $_SESSION['message'] . '</p>';
+                            echo '<p class="message">' . $_SESSION['message'] . '</p>';
                         }
                         unset($_SESSION['message']);
                             ?> 

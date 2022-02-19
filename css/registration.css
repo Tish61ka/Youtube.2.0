@@ -162,3 +162,7 @@ input[type=file]{
     font-size: 0.875em;
     color: #dc3545;
   }
+  .message{
+      padding-top: 25px;
+      font-size: 20px;
+  }
