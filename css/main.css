@@ -51,7 +51,7 @@ header{
 .enter{
     display: flex;
     background: transparent;
-    border: 2px solid #9B59B6;
+    border: 2px solid #bc13fe;
     float: right;
     margin: 36px 0px 0px 36px;
     width: 100px;
@@ -68,7 +68,7 @@ header{
 .enter p{
     margin-top: 0.5vw;
     margin-left: 0.3vw;
-    color: #9B59B6;
+    color: #bc13fe;
     font-size: 16px;
 }
 .content-wrapper{
@@ -76,7 +76,6 @@ header{
     padding: 10px;
     line-height: 34px;
 }
-@media(max-width: 767px){
 .header__nav {
 	display: block;
 	position: absolute;
@@ -87,12 +86,12 @@ header{
     width: 100%;
     box-shadow: 0 4px 2px -2px rgba(36, 36, 36, 0.37);
     transition: all 0.4s ease-in-out;
-	left:-100%;
+	left:-120%;
 }
 .header__menu {
 	display: block;
-    border-top: 1px purple solid;
-    border-bottom: 1px purple solid;
+    border-top: 1px #bc13fe solid;
+    border-bottom: 1px #bc13fe solid;
 }
 .header__nav.open-menu{
     left:0;
@@ -106,7 +105,7 @@ header{
     width: 40px;
     height: 35px;
     display: block;
-    margin-left: 10px;
+    margin-left: -120px;
     top: 2vh;
    }
    .menu-burger__header:hover{
@@ -152,6 +151,8 @@ header{
 .fixed-pade {
     overflow: hidden;
 }
+@media(max-width: 767px){
+
 }
 .a{
     display: grid;

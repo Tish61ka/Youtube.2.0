@@ -14,7 +14,7 @@
     <section>
         <ul class="bodu_ul">
             <li class="top">
-                <a href="index.html"><div class="logo">GameHub</div></a>
+                <a href="index.html"><img src="/pictures/лого.png" class="logo" alt=""></a>
                 <ul class="two_button">
                     <li class="two_button_first_li">
                         <a href="singin.php">Вход</a>
