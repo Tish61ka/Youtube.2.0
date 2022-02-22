@@ -59,7 +59,7 @@ header{
     background: transparent;
     border: 2px solid #ba45f0;
     float: right;
-    margin: 36px 0px 0px 36px;
+    margin: 40px 0px 0px 36px;
     width: 100px;
     height: 36px;
 }
@@ -115,9 +115,9 @@ header{
     width: 40px;
     height: 35px;
     display: block;
-    margin-top: 25%;
+    margin-top: 60%;
     margin-left: -120px;
-    top: 2vh;
+    top: 3vh;
    }
    .menu-burger__header:hover{
        cursor: pointer;
@@ -164,6 +164,53 @@ header{
 }
 
 /* Close Burger Menu */
+.logo{
+    position: relative;
+    width: 200px;
+    height: 50px;
+    top: 30px;
+}
+/*Search*/
+
+form{
+    position: relative;
+    width: 35%;
+    margin-left: 15%;
+    margin-top: -0.5%;
+}
+.input{
+    position: relative;
+    background: transparent;
+    width: 35vw;
+    height: 42px;
+    padding-left: 10px;
+    border: 2px solid #ba45f0;
+    border-radius: 5px;
+    outline: none;
+    background: #2a2827;
+    color: #9E9C9C;
+    top: 40px;
+    margin-left: 100px;
+}
+form .button{
+    position: absolute; 
+    top: 40px;
+    right: 0px;
+    left: 612px;
+    width: 42px;
+    height: 42px;
+    border: none;
+    background: #ba45f0;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+form .button img{
+    position: absolute;
+    top: 6px;
+    right: 7px;
+}
+
+/*Close search*/
 
 /* Slider and block a*/
 
