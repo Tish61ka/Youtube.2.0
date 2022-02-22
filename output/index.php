@@ -11,7 +11,7 @@
     <title>YouTube 2.0</title>
 </head>
 <body>
-    <header>
+<header>
         <div class="f">
             <div class="container_2">
                 <div class="menu-burger__header">
@@ -24,16 +24,38 @@
                         <li><a href="" class="menu__item">Акции</a></li>
                         <li><a href="" class="menu__item">Новинки</a></li>
                         <li><a href="" class="menu__item">Доставка</a></li>
-                        <li><a href="" class="menu__item">Контакты</a></li>
+                        <li><a href="../functions/logout.php" class="menu__item">Выход</a></li>
                     </ul>
-                </nav>
-                
-                <a href="../output/profile.php"><img src="<?= "../" . $_SESSION['user']['avatar']?>" width="40" height="40" style="border-radius: 50px;"></a>
-                <a href="../functions/logout.php">Выход</a>
+                </nav>   
+                <a href="index.php"><img src="/pictures/лого.png" class="logo" alt=""></a>  
+                <form method="POST" action="search.php">
+                    <input class="input" type="text" name="search" required placeholder="Искать здесь...">
+                    <button class="button" type="submit" name="search_btn"><img src="https://img.icons8.com/ios-glyphs/30/000000/search--v1.png"/></button>
+            </form>
+            <a href="../output/profile.php" class="log_in">
+                <img src="<?= "../" . $_SESSION['user']['avatar']?>" class="prof">
+               </a> 
              </div>
     </header>
+    <!---->
     <!-- OPEN MAIN -->
-    <div class="a">picture and text</div>
+    <div class="a">
+        <div id="carousel">
+            <h1>Лучшие ролики недели</h1>
+          <figure id="spinner">
+            <img src="/pictures/Превью1.png" alt>
+            <img src="/pictures/Превью2.png" alt>
+            <img src="/pictures/Превью3.png" alt>
+            <img src="/pictures/Превью4.png" alt>
+            <img src="/pictures/Превью5.png" alt>
+            <img src="/pictures/Превью6.png" alt>
+            <img src="/pictures/Превью7.png" alt>
+            <img src="/pictures/Превью8.png" alt>
+          </figure>
+        </div>
+        <span style="float:left; margin-right: 100px;" class="ss-icon" onclick="galleryspin('-')">&lt;</span>
+        <span style="margin-left: 1150px;" class="ss-icon" onclick="galleryspin('')">&gt;</span>
+    </div>
     <div class="b">slider</div>
     <div class="container">
         <div class="c">element</div>
@@ -47,6 +69,7 @@
     </footer>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="../js/script.js"></script> 
+    <script src="../js/slider.js"></script>
 
 </body>
 </html>
