@@ -25,6 +25,7 @@ header{
     grid-column: 1/13;
     grid-row: 1/2;
     color: white;
+    border-bottom: 1px solid #ba45f0;
 }
 .container_2{
     width: 100%;
@@ -88,7 +89,7 @@ header{
 .header__nav {
 	display: block;
 	position: absolute;
-    top: 118px;
+    top: 119px;
     background: #2d2b2b;
     box-shadow: #ccc;
     width: 11%;
