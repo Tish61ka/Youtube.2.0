@@ -111,6 +111,9 @@ header{
 	margin: 40px 0px 40px 23px;
     font-size: 14px;
 	}
+    .menu__item{
+        color: #ba45f0;
+    }
 .menu-burger__header {
 	position: relative;
     width: 40px;

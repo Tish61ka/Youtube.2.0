@@ -13,11 +13,17 @@ if (!$_SESSION['user']){
     <link rel="stylesheet" href="../css/profile.css">
     <title>Профиль</title>
 </head>
+<header>
+    <a href="index.php"><img src="../pictures/лого.png" class="logo" alt=""></a>
+    <div>
+        <p><?=$_SESSION['user']['nick_name']?></p>
+          <img src="<?= "../" . $_SESSION['user']['avatar'] ?>">
+    </div>
+</header>
 <body>
-          <p><?=$_SESSION['user']['nick_name']?></p>
-          <img src="<?= "../" . $_SESSION['user']['avatar'] ?>" width="40" height="40" style="border-radius: 50px;">
+        <section>
 
-          <a href="../functions/logout.php">Выход</a>
-    <a href="index.php">На главную</a>
+        </section>
+        <a href="../functions/logout.php">Выход</a>
 </body>
 </html>
