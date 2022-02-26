@@ -34,12 +34,32 @@ if (!$_SESSION['user']){
 
                 <input type="submit" value="Загрузить">
                 <?php 
-                        if ($_SESSION['message']){
-                            echo '<p class="message">' . $_SESSION['message'] . '</p>';
-                        }
-                        unset($_SESSION['message']);
+                    if ($_SESSION['message']){
+                        echo '<p class="message">' . $_SESSION['message'] . '</p>';
+                    }
+                    unset($_SESSION['message']);
                 ?> 
             </form>
+        </section>
+        <section>
+            <h1>Мои видео</h1>
+            <?php 
+                require_once('../functions/connect.php');
+                $id_user = $_SESSION['user']['id'];
+                $result = $connect->prepare("SELECT * FROM `videos` WHERE `id_user` = '$id_user'");
+                $result->execute();
+                while($row = $result->fetch(PDO::FETCH_ASSOC)){
+                    ?>
+                    <h2>Название видео:<?=$row['name_video']?></h2>
+                    <video class="my" controls="controls">
+                        <source src="<?='../' . $row['video']?>" type="video/mp4">
+                    </video>
+                    <h2>Кто выложил видео:<?=$row['name_user']?></h2>
+                    <h2>Описание:<?=$row['discription']?></h2>
+                    <img src="<?='../' . $row['avatar_user']?>" width="60" height="60" style="border-radius: 50px;" alt="">
+                    <?php
+                }
+            ?>
         </section>
         <a href="../functions/logout.php">Выход</a>
 </body>

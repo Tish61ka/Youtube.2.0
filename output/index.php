@@ -28,7 +28,7 @@
                     </ul>
                 </nav>   
                 <a href="index.php"><img src="/pictures/лого.png" class="logo" alt=""></a>  
-                <form method="POST" action="search.php">
+                <form method="GET" action="../functions/search.php">
                     <input class="input" type="text" name="search" required placeholder="Искать здесь...">
                     <button class="button" type="submit" name="search_btn"><img src="https://img.icons8.com/ios-glyphs/30/000000/search--v1.png"/></button>
             </form>
@@ -56,17 +56,34 @@
         <span style="float:left; margin-right: 100px;" class="ss-icon" onclick="galleryspin('-')">&lt;</span>
         <span style="margin-left: 1150px;" class="ss-icon" onclick="galleryspin('')">&gt;</span>
     </div>
-    <div class="b">slider</div>
-    <div class="container">
-        <div class="c">element</div>
+    <div class="b">
+    <?php 
+                require_once('../functions/connect.php');
+                $result = $connect->prepare("SELECT * FROM `videos`");
+                $result->execute();
+                while($row = $result->fetch(PDO::FETCH_ASSOC)){
+                    ?>
+                    <h2>Название видео:<?=$row['name_video']?></h2> 
+                    <video class="my" controls="controls">
+                        <source src="<?='../' . $row['video']?>" type="video/mp4">
+                    </video>
+                    <h2>Кто выложил видео:<?=$row['name_user']?></h2> 
+                    <h2>Описание:<?=$row['discription']?></h2> 
+                    <img src="<?='../' . $row['avatar_user']?>" width="60" height="60" style="border-radius: 50px;" alt="">
+                    <?php
+                }
+            ?>
+    </div>
+    <!-- <div class="container">
+        <div class="c"></div>
         <div class="d">element</div>
         <div class="e">element</div>
         <div class="e">element</div>
-    </div>
+    </div> -->
     <!-- CLOSE MAIN -->
-    <footer>
+    <!-- <footer>
         <div class="e">footer</div>
-    </footer>
+    </footer> -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="../js/script.js"></script> 
     <script src="../js/slider.js"></script>
