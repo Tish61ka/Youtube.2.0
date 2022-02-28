@@ -10,7 +10,7 @@ if (!$_SESSION['user']){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/profile.css">
+    <link rel="stylesheet" href="../css/myvideos.css">
     <title>Профиль</title>
 </head>
 <header>
@@ -28,12 +28,12 @@ if (!$_SESSION['user']){
                 Profile
             </li>
         </a>
-        <a href="">
-            <li class="between_li">
+        <a href="profile.php">
+            <li>
                 Download video
             </li>
         </a>
-        <a href="myvideos.php">
+        <a href="">
             <li class="last_li">
                 My video
             </li>
@@ -69,6 +69,25 @@ if (!$_SESSION['user']){
                     unset($_SESSION['message']);
                 ?> 
             </form>
+        </section>
+        <section>
+            <h1>Мои видео</h1>
+            <?php 
+                require_once('../functions/connect.php');
+                $id_user = $_SESSION['user']['id'];
+                $result = $connect->prepare("SELECT * FROM `videos` WHERE `id_user` = '$id_user'");
+                $result->execute();
+                while($row = $result->fetch(PDO::FETCH_ASSOC)){
+                    ?>
+                    <h2>Название видео:<?=$row['name_video']?></h2>
+                    <video class="my" controls="controls">
+                        <source src="<?='../' . $row['video']?>" type="video/mp4">
+                    </video>
+                    <h2>Описание:<?=$row['discription']?></h2>
+                    <img src="<?='../' . $row['avatar_user']?>" width="60" height="60" style="border-radius: 50px;" alt="">
+                    <?php
+                }
+            ?>
         </section>
         <a class="logout" href="../functions/logout.php">
             <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
