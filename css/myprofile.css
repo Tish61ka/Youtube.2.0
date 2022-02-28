@@ -125,11 +125,30 @@ form{
     height: 45px;
     border: 1px solid #ba45f0;
     border-radius: 10px;
-    background: transparent;
+    background: transparent; position: relative;
+    overflow: hidden;
+    transition: color 300ms ease-in-out;
 }
-.download{
+.download:after {
+    content: '';
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 100%;
+    background: #ba45f0;
+    z-index: -1;
+    transition: width 300ms ease-in-out;
+  }
+  .download:hover {
+    color: #fff;
     cursor: pointer;
-}
+  }
+  .download:hover:after {
+    width: 110%;
+  }
 .avatar{
     position: relative;
     top: -50px;
