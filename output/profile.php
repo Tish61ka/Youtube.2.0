@@ -54,7 +54,6 @@ if (!$_SESSION['user']){
                     <video class="my" controls="controls">
                         <source src="<?='../' . $row['video']?>" type="video/mp4">
                     </video>
-                    <h2>Кто выложил видео:<?=$row['name_user']?></h2>
                     <h2>Описание:<?=$row['discription']?></h2>
                     <img src="<?='../' . $row['avatar_user']?>" width="60" height="60" style="border-radius: 50px;" alt="">
                     <?php
