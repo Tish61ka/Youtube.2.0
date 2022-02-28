@@ -54,9 +54,7 @@ if (!$_SESSION['user']){
                 while($row = $result->fetch(PDO::FETCH_ASSOC)){
                     ?>
                     <div class="video">
-                    <video class="my" controls="controls">
-                        <source src="<?='../' . $row['video']?>" type="video/mp4">
-                    </video>
+                    <video class="my" src="<?='../' . $row['video']?>" poster="<?='../' . $row['prewiew']?>" controls></video>
                     <p><?=$row['name_video']?></p>
                     </div>
                     <!--

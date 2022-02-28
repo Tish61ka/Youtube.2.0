@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/main.css">
-    <title>YouTube 2.0</title>
+    <title>GameHUB</title>
 </head>
 <body>
 <header>
@@ -63,13 +63,12 @@
                 $result->execute();
                 while($row = $result->fetch(PDO::FETCH_ASSOC)){
                     ?>
-                    <h2>Название видео:<?=$row['name_video']?></h2> 
-                    <video class="my" controls="controls">
-                        <source src="<?='../' . $row['video']?>" type="video/mp4">
+                    <h2><?=$row['name_video']?></h2> 
+                    <video class="my" src="<?='../' . $row['video']?>" poster="<?='../' . $row['prewiew']?>">
                     </video>
-                    <h2>Кто выложил видео:<?=$row['name_user']?></h2> 
-                    <h2>Описание:<?=$row['discription']?></h2> 
-                    <img src="<?='../' . $row['avatar_user']?>" width="60" height="60" style="border-radius: 50px;" alt="">
+                    <h2><?=$row['name_user']?></h2> 
+                    <h2><?=$row['discription']?></h2>
+                    <img src="<?='../' . $row['avatar_user']?>" height="60" width="60" style="border-radius: 50px;" alt="">
                     <?php
                 }
             ?>

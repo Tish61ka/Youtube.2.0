@@ -15,7 +15,10 @@
     $video = 'videos/' . time() . $_FILES['video']['name'];
     move_uploaded_file($_FILES['video']['tmp_name'], '../' . $video);
 
-    $add_video = $connect->prepare("INSERT INTO `videos`(`id`, `video`, `name_video`, `discription`, `id_user`, `name_user`,`avatar_user`) VALUES (NULL,'$video','$name_video','$discription','$id_user','$name_user','$avatar_user')");
+    $prewiew = 'prewiew/' . time() . $_FILES['prewiew']['name'];
+    move_uploaded_file($_FILES['prewiew']['tmp_name'], '../' . $prewiew);
+
+    $add_video = $connect->prepare("INSERT INTO `videos`(`id`, `video`, `name_video`, `discription`, `id_user`, `name_user`,`avatar_user`,`prewiew`) VALUES (NULL,'$video','$name_video','$discription','$id_user','$name_user','$avatar_user', '$prewiew')");
     $add_video->execute();
     header('Location: ../output/profile.php');
 

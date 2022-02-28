@@ -185,3 +185,8 @@ form{
     top: 20px;
     right: 50px;
 }
+.message{
+    position: absolute;
+    margin-left: 500px;
+    margin-top: 200px;
+}

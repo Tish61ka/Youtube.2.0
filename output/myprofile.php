@@ -49,11 +49,17 @@ if (!$_SESSION['user']){
                 <p>Имя:</p>
                 <p class="nickname"><?=$_SESSION['user']['nick_name']?></p>
             </div>
-            <form method="post">
-                <input type="file" name="video" class="button_file" id="a"> 
+            <form method="post" enctype="multipart/form-data" action="../functions/change_avatar.php">
+                <input type="file" name="avatar" class="button_file" id="a"> 
                 <button class="button_file_2">Сменить аватар</button>
                 <button class="download" type="submit">Загрузить</button>
             </form>
+            <?php 
+                        if ($_SESSION['message']){
+                            echo '<p class="message">' . $_SESSION['message'] . '</p>';
+                        }
+                        unset($_SESSION['message']);
+                            ?> 
             <div class="box">
                 <a href="#" >
                     <img src="<?= "../" . $_SESSION['user']['avatar'] ?>">  
