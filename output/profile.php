@@ -19,7 +19,11 @@ if (!$_SESSION['user']){
 <body>
 <div class="line-right">
 <div class="icon">
-          <img src="<?= "../" . $_SESSION['user']['avatar'] ?>">
+    <div class="crop">
+                <a href="#" >
+                    <img src="<?= "../" . $_SESSION['user']['avatar'] ?>">  
+                </a>
+            </div>
           <p><?=$_SESSION['user']['nick_name']?></p>
     </div>
     <ul class="ul_profile">

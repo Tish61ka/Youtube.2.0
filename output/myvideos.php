@@ -19,7 +19,11 @@ if (!$_SESSION['user']){
 <body>
 <div class="line-right">
 <div class="icon">
-          <img src="<?= "../" . $_SESSION['user']['avatar'] ?>">
+    <div class="crop">
+                <a href="#" >
+                    <img src="<?= "../" . $_SESSION['user']['avatar'] ?>">  
+                </a>
+            </div>
           <p><?=$_SESSION['user']['nick_name']?></p>
     </div>
     <ul class="ul_profile">
@@ -41,37 +45,7 @@ if (!$_SESSION['user']){
     </ul>
 </div>
         <section>
-            <form action="../functions/load_video.php" method="post" enctype="multipart/form-data">
-                <div>
-                    <label for="">Название</label>
-                    <input type="text" name="name_video" placeholder="Введите название видео">
-                </div>
-                <div>
-                    <label class="label_area" for="">Описание</label> 
-                    <textarea name="discription" id="" cols="30" rows="10" placeholder="Введите описание видео"></textarea>
-                </div> 
-                    <div>
-                    <input type="file" name="video" class="button_file" id="a"> 
-                    <button class="button_file_2">Загрузите видео</button>
-                </div>
-                <input type="file" name="prewiew" class="prewiew">
-                <div class="download_prewiew">
-                <svg class="svg_download" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
-                    width="60" height="60"
-                    viewBox="0 0 172 172"
-                    style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="5" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#ffffff"><path d="M75.25,14.33333c-5.85562,0 -10.75,4.89438 -10.75,10.75v46.58333h-31.63411l53.13411,53.13411l53.13411,-53.13411h-31.63411v-46.58333c0,-5.85562 -4.89438,-10.75 -10.75,-10.75zM78.83333,28.66667h14.33333v57.33333h11.36589l-18.53256,18.53256l-18.53255,-18.53256h11.36589zM14.33333,143.33333v14.33333h143.33333v-14.33333z"></path></g></g></svg>
-                </div>
-                <button type="submit" class="enter">Опубликовать</button>
-                <?php 
-                    if ($_SESSION['message']){
-                        echo '<p class="message">' . $_SESSION['message'] . '</p>';
-                    }
-                    unset($_SESSION['message']);
-                ?> 
-            </form>
-        </section>
-        <section>
-            <h1>Мои видео</h1>
+            <div class="container">
             <?php 
                 require_once('../functions/connect.php');
                 $id_user = $_SESSION['user']['id'];
@@ -79,15 +53,20 @@ if (!$_SESSION['user']){
                 $result->execute();
                 while($row = $result->fetch(PDO::FETCH_ASSOC)){
                     ?>
-                    <h2>Название видео:<?=$row['name_video']?></h2>
+                    <div class="video">
                     <video class="my" controls="controls">
                         <source src="<?='../' . $row['video']?>" type="video/mp4">
                     </video>
-                    <h2>Описание:<?=$row['discription']?></h2>
-                    <img src="<?='../' . $row['avatar_user']?>" width="60" height="60" style="border-radius: 50px;" alt="">
+                    <p><?=$row['name_video']?></p>
+                    </div>
+                    <!--
+                        <h2>Описание:<?=$row['discription']?></h2>
+                        <img src="<?='../' . $row['avatar_user']?>" width="60" height="60" style="border-radius: 50px;" alt="">
+                    -->
                     <?php
                 }
             ?>
+            </div>
         </section>
         <a class="logout" href="../functions/logout.php">
             <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"

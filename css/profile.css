@@ -49,13 +49,25 @@ header{
     margin-left: 85px;
     font-size: 18px;
 }
-.icon img{
+.crop{
     width: 100px;
     height: 100px;
     margin-top: 20px;
     margin-left: 65px;
     border-radius: 50px;
-}
+	position: relative;
+    overflow:hidden;
+	}
+	/* input values to crop the image: top, right, bottom, left */
+.crop img{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:300px;
+    height:300px;
+    object-fit:cover;
+	}
 .ul_profile{
     margin-top: 200px;
     display: flex;

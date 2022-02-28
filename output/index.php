@@ -32,7 +32,7 @@
                     <input class="input" type="text" name="search" required placeholder="Искать здесь...">
                     <button class="button" type="submit" name="search_btn"><img src="https://img.icons8.com/ios-glyphs/30/000000/search--v1.png"/></button>
             </form>
-            <a href="../output/profile.php" class="log_in">
+            <a href="../output/myprofile.php" class="log_in">
                 <img src="<?= "../" . $_SESSION['user']['avatar']?>" class="prof">
                </a> 
              </div>

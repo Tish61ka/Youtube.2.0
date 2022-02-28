@@ -19,7 +19,11 @@ if (!$_SESSION['user']){
 <body>
 <div class="line-right">
 <div class="icon">
-          <img src="<?= "../" . $_SESSION['user']['avatar'] ?>">
+            <div class="crop">
+                <a href="#" >
+                    <img src="<?= "../" . $_SESSION['user']['avatar'] ?>">  
+                </a>
+            </div>
           <p><?=$_SESSION['user']['nick_name']?></p>
     </div>
     <ul class="ul_profile">
@@ -50,7 +54,11 @@ if (!$_SESSION['user']){
                 <button class="button_file_2">Сменить аватар</button>
                 <button class="download" type="submit">Загрузить</button>
             </form>
-            <img class="avatar" src="<?= "../" . $_SESSION['user']['avatar'] ?>">
+            <div class="box">
+                <a href="#" >
+                    <img src="<?= "../" . $_SESSION['user']['avatar'] ?>">  
+                </a>
+            </div>
         </section>
         <a class="logout" href="../functions/logout.php">
             <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
