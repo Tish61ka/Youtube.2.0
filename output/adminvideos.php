@@ -10,11 +10,11 @@ if (!$_SESSION['admin']){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/adminprofile.css">
+    <link rel="stylesheet" href="../css/profile.css">
     <title>Профиль</title>
 </head>
 <header>
-    <a href=""><img src="../pictures/лого.png" class="logo" alt=""></a>
+    <a href="index.php"><img src="../pictures/лого.png" class="logo" alt=""></a>
 </header>
 <body>
 <div class="line-right">
@@ -24,12 +24,12 @@ if (!$_SESSION['admin']){
     </div>
     <ul class="ul_profile">
         <a href="adminprofile.php">
-            <li class="between_li">
+            <li>
                 Profile
             </li>
         </a>
         <a href="adminvideos.php">
-            <li>
+            <li class="between_li">
                 Download video
             </li>
         </a>
@@ -41,28 +41,22 @@ if (!$_SESSION['admin']){
     </ul>
 </div>
         <section>
-            <div class="div_nickname">
-                <ul>                    
-                <?php
-                    require_once('../functions/connect.php');
-                    $result = $connect->prepare("SELECT * FROM `users`");
-                    $result->execute();
-                    while($row = $result->fetch(PDO::FETCH_ASSOC)){
-                        ?>
-                            <li><p>ID:<?=$row['id']?></p></li>
-                            <li><p>Никнейм:<?=$row['nick_name']?></p></li>
-                            <li><p>Почта:<?=$row['email']?></p></li>
-                            <li><p>Пароль:<?=$row['password']?></p></li>
-                            <li><p>Роль:<?=$row['role']?></p></li> 
-                            <li><p>Бан:<?=$row['ban']?></p></li>
-                            <a href="../functions/delete_user.php?id=<?php echo $row['id']?>">Удалить пользователя</a> <br>
-                            <a href="../functions/ban_user.php?id=<?php echo $row['id']?>">Забанить пользователя</a> <br>
-                            <a href="../functions/unban_user.php?id=<?php echo $row['id']?>">Разбанить пользователя</a> <br>
-                        <?php
-                    }
-                ?>
-                </ul>
-            </div>
+        <?php 
+                require_once('../functions/connect.php');
+                $result = $connect->prepare("SELECT * FROM `videos`");
+                $result->execute();
+                while($row = $result->fetch(PDO::FETCH_ASSOC)){
+                    ?>
+                    <h2><?=$row['name_video']?></h2> 
+                    <video class="my" src="<?='../' . $row['video']?>" poster="<?='../' . $row['prewiew']?>">
+                    </video>
+                    <h2><?=$row['name_user']?></h2> 
+                    <h2><?=$row['discription']?></h2>
+                    <img src="<?='../' . $row['avatar_user']?>" height="60" width="60" style="border-radius: 50px;" alt="">
+                    <a href="../functions/delete_video.php?id=<?php echo $row['id']?>">Удалить видео</a>
+                    <?php
+                }
+            ?>
         </section>
         <a class="logout" href="../functions/logout.php">
             <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
