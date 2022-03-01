@@ -32,7 +32,8 @@
                     "id" => $user['id'],
                     "nick_name" => $user['nick_name'],
                     "avatar" => $user['avatar'],
-                    "email" => $user['email']
+                    "email" => $user['email'],
+                    "ban" => $user['ban']
                 ];
                 header('Location: ../output/profile.php');
             }        

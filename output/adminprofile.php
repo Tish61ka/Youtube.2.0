@@ -1,7 +1,7 @@
 <?php
 session_start();
-if (!$_SESSION['admin']){
-    header('Location: adminprofile.php');
+if(!$_SESSION['admin']){
+    header('Location: singin.php');
 }
 ?>
 <!DOCTYPE html>
@@ -11,16 +11,17 @@ if (!$_SESSION['admin']){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/adminprofile.css">
-    <title>Профиль</title>
+    <title>Профиль администратора</title>
 </head>
 <header>
     <a href=""><img src="../pictures/лого.png" class="logo" alt=""></a>
 </header>
 <body>
+    <p><?=$_SESSION['admin']['id']?></p>
 <div class="line-right">
 <div class="icon">
-          <p>Никнейм:<?=$_SESSION['admin']['nick_name']?></p>
-          <p>Почта:<?=$_SESSION['admin']['email']?></p>
+          <p>Никнейм: <?=$_SESSION['admin']['nick_name']?></p>
+          <p>Почта: <?=$_SESSION['admin']['email']?></p>
     </div>
     <ul class="ul_profile">
         <a href="adminprofile.php">
@@ -49,15 +50,15 @@ if (!$_SESSION['admin']){
                     $result->execute();
                     while($row = $result->fetch(PDO::FETCH_ASSOC)){
                         ?>
-                            <li><p>ID:<?=$row['id']?></p></li>
-                            <li><p>Никнейм:<?=$row['nick_name']?></p></li>
-                            <li><p>Почта:<?=$row['email']?></p></li>
-                            <li><p>Пароль:<?=$row['password']?></p></li>
-                            <li><p>Роль:<?=$row['role']?></p></li> 
-                            <li><p>Бан:<?=$row['ban']?></p></li>
-                            <a href="../functions/delete_user.php?id=<?php echo $row['id']?>">Удалить пользователя</a> <br>
-                            <a href="../functions/ban_user.php?id=<?php echo $row['id']?>">Забанить пользователя</a> <br>
-                            <a href="../functions/unban_user.php?id=<?php echo $row['id']?>">Разбанить пользователя</a> <br>
+                            <li><p>ID: <?=$row['id']?></p></li>
+                            <li><p>Никнейм: <?=$row['nick_name']?></p></li>
+                            <li><p>Почта: <?=$row['email']?></p></li>
+                            <li><p>Пароль: <?=$row['password']?></p></li>
+                            <li><p>Роль: <?=$row['role']?></p></li> 
+                            <li><p>Бан: <?=$row['ban']?></p></li>
+                            <li><a href="../functions/delete_user.php?id=<?php echo $row['id']?>">Удалить пользователя</a></li> 
+                            <li><a href="../functions/ban_user.php?id=<?php echo $row['id']?>">Забанить пользователя</a> <br></li>
+                            <li><a href="../functions/unban_user.php?id=<?php echo $row['id']?>">Разбанить пользователя</a> <br></li>
                         <?php
                     }
                 ?>

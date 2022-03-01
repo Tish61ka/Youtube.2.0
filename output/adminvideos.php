@@ -1,7 +1,7 @@
 <?php
 session_start();
-if (!$_SESSION['admin']){
-    header('Location: adminprofile.php');
+if(!$_SESSION['admin']){
+    header('Location: singin.php');
 }
 ?>
 <!DOCTYPE html>
@@ -10,8 +10,8 @@ if (!$_SESSION['admin']){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/profile.css">
-    <title>Профиль</title>
+    <link rel="stylesheet" href="../css/adminvideos.css">
+    <title>Профиль администратора</title>
 </head>
 <header>
     <a href="index.php"><img src="../pictures/лого.png" class="logo" alt=""></a>
@@ -19,8 +19,8 @@ if (!$_SESSION['admin']){
 <body>
 <div class="line-right">
 <div class="icon">
-          <p>Никнейм:<?=$_SESSION['admin']['nick_name']?></p>
-          <p>Почта:<?=$_SESSION['admin']['email']?></p>
+          <p>Никнейм: <?=$_SESSION['admin']['nick_name']?></p>
+          <p>Почта: <?=$_SESSION['admin']['email']?></p>
     </div>
     <ul class="ul_profile">
         <a href="adminprofile.php">
@@ -41,22 +41,30 @@ if (!$_SESSION['admin']){
     </ul>
 </div>
         <section>
-        <?php 
-                require_once('../functions/connect.php');
-                $result = $connect->prepare("SELECT * FROM `videos`");
-                $result->execute();
-                while($row = $result->fetch(PDO::FETCH_ASSOC)){
-                    ?>
-                    <h2><?=$row['name_video']?></h2> 
-                    <video class="my" src="<?='../' . $row['video']?>" poster="<?='../' . $row['prewiew']?>">
-                    </video>
-                    <h2><?=$row['name_user']?></h2> 
-                    <h2><?=$row['discription']?></h2>
-                    <img src="<?='../' . $row['avatar_user']?>" height="60" width="60" style="border-radius: 50px;" alt="">
-                    <a href="../functions/delete_video.php?id=<?php echo $row['id']?>">Удалить видео</a>
-                    <?php
+            <div class="container">
+                <?php 
+                    require_once('../functions/connect.php');
+                    $result = $connect->prepare("SELECT * FROM `videos`");
+                    $result->execute();
+                    while($row = $result->fetch(PDO::FETCH_ASSOC)){
+                        ?>
+                        <div class="video">
+                            <h2><?=$row['name_video']?></h2> 
+                            <video class="my" src="<?='../' . $row['video']?>" poster="<?='../' . $row['prewiew']?>" controls>
+                            </video>
+                            <h2><?=$row['name_user']?></h2> 
+                            <h2><?=$row['discription']?></h2>
+                            <div class="ava_and_del">
+                                <img src="<?='../' . $row['avatar_user']?>" height="60" width="60" style="border-radius: 50px;" alt="">
+                                <a href="../functions/delete_video.php?id=<?php echo $row['id']?>">Удалить видео</a>
+                            </div>                            
+                        </div>
+                        <?php
                 }
-            ?>
+                ?>
+            </div>
+                
+       
         </section>
         <a class="logout" href="../functions/logout.php">
             <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"

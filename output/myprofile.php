@@ -1,7 +1,8 @@
 <?php
 session_start();
-if (!$_SESSION['user']){
-    header('Location: profile.php');
+if(!$_SESSION['user']){
+    session_unset($_SESSION['user']);
+    header('Location: singin.php');
 }
 ?>
 <!DOCTYPE html>

@@ -1,7 +1,8 @@
 <?php
 session_start();
-if (!$_SESSION['user']){
-    header('Location: profile.php');
+if(!$_SESSION['user']){
+    session_unset($_SESSION['user']);
+    header('Location: singin.php');
 }
 ?>
 <!DOCTYPE html>
@@ -17,6 +18,7 @@ if (!$_SESSION['user']){
     <a href="index.php"><img src="../pictures/лого.png" class="logo" alt=""></a>
 </header>
 <body>
+    <p><?=$_SESSION['user']['id']?></p>
 <div class="line-right">
 <div class="icon">
     <div class="crop">

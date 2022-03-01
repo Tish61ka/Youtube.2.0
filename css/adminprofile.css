@@ -39,7 +39,7 @@ header{
     position: relative;
     float: left;
     top: 20px;
-    left: 50px;
+    left: 0px;
     display: flex;
     flex-direction: column;
 }
