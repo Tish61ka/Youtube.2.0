@@ -1,21 +1,8 @@
 <?php
 session_start();
-if(!$_SESSION['user']){
-    session_unset($_SESSION['user']);
+if(!$_SESSION['admin']){
+    session_unset($_SESSION['admin']);
     header('Location: singin.php');
-}
-require '../functions/connect.php';
-$sql = "SELECT * FROM `users`";
-$request = $connect->query($sql);
-$response = $request->fetchAll(PDO::FETCH_ASSOC);
-if($response){
-    for($i=0;$i<count($response);$i++){
-        if($response[$i]['id'] == $_SESSION['user']['id'] && $response[$i]['ban'] == 1){
-            session_unset();
-            $_SESSION['message'] = "Ваш аккаунт забанен!!";
-            header("Location: singin.php");
-        }
-    }
 }
 ?>
 <!DOCTYPE html>
@@ -24,77 +11,73 @@ if($response){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/myvideos.css">
-    <title>Профиль</title>
+    <link rel="stylesheet" href="../css/adminmoder.css">
+    <title>Профиль администратора</title>
 </head>
 <header>
-    <a href="index.php"><img src="../pictures/лого.png" class="logo" alt=""></a>
+    <a href=""><img src="../pictures/лого.png" class="logo" alt=""></a>
 </header>
 <body>
 <div class="line-right">
 <div class="icon">
-    <div class="crop">
-                <a href="#" >
-                    <img src="<?= "../" . $_SESSION['user']['avatar'] ?>">  
-                </a>
-            </div>
-          <p><?=$_SESSION['user']['nick_name']?></p>
+          <p>Никнейм: <?=$_SESSION['admin']['nick_name']?></p>
+          <p>Почта: <?=$_SESSION['admin']['email']?></p>
     </div>
     <ul class="ul_profile">
-        <a href="myprofile.php">
+        <a href="adminprofile.php">
             <li>
-                Профиль
+                Профили пользователей
             </li>
         </a>
-        <a href="profile.php">
+        <a href="adminvideos.php">
             <li>
-                Загрузить видео
+                Видео
             </li>
         </a>
-        <a href="">
+        <a href="adminmoder.php">
             <li class="last_li">
-                Мои видео
+                Модерация видео
             </li>
         </a>
     </ul>
 </div>
         <section>
-            <div class="container">
-            <?php 
-                require_once('../functions/connect.php');
-                $id_user = $_SESSION['user']['id'];
-                $result = $connect->prepare("SELECT * FROM `output_videos` WHERE `id_user` = '$id_user'");
-                $result->execute();
-                while($row = $result->fetch(PDO::FETCH_ASSOC)){
-                    ?>
-                    <div class="video">
-                    <a href="../output/go_to_video.php?id=<?php echo $row['id'] ?>"><video class="my" src="<?php 
+        <div class="container">
+                <?php 
+                    require_once('../functions/connect.php');
+                    $result = $connect->prepare("SELECT * FROM `videos`");
+                    $result->execute();
+                    while($row = $result->fetch(PDO::FETCH_ASSOC)){
+                        ?>
+                        <div class="video">
+                            <h2><?=$row['name_video']?></h2> 
+                            <video class="my" src="<?php 
                                 if($row['ban']==1){
-                                    $_SESSION['message'] = 'Видео забанено и скоро будет удалено!';
+                                    $_SESSION['message'] = 'Видео забанено!';
                                 }
                                 else{
+                                    $_SESSION['message'] = 'Видео доступно!';
                                     echo '../' . $row['video'];
                                 }
                             ?>" poster="<?php
-                            if($row['ban']==1){
-                                echo '../prewiew/deleted_video.png';
-                            }
-                            else{
-                                echo '../' . $row['prewiew'];
-                            }
-                        ?>"></video></a>
-                    <p><?=$row['name_video']?></p>
-                            <p><?=$row['date']?></p>
-                    <?php 
-                                if ($_SESSION['message']){
-                                    echo '<p class="message">' . $_SESSION['message'] . '</p>';
+                                if($row['ban']==1){
+                                    echo '../prewiew/deleted_video.jpg';
                                 }
-                                unset($_SESSION['message']);
-                            ?>
-                    </div>
-                    <?php
-                }
-            ?>
+                                else{
+                                    echo '../' . $row['prewiew'];
+                                }
+                            ?>" controls>                           
+                            </video>
+                            <h2><?=$row['name_user']?></h2> 
+                            <h2><?=$row['discription']?></h2>
+                            <p><?=$row['date']?></p>
+                            <a href="../functions/delete_video_moder.php?id=<?php echo $row['id']?>">Отклонить видео</a>
+                            <a href="../functions/output_video.php?id=<?php echo $row['id']?>">Принять видео</a>
+                            <img src="<?='../' . $row['avatar_user']?>" height="60" width="60" style="border-radius: 50px;" alt="">                          
+                        </div>
+                        <?php
+                    }
+                ?>
             </div>
         </section>
         <a class="logout" href="../functions/logout.php">

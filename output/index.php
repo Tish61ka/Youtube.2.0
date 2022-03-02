@@ -76,12 +76,12 @@ if($response){
     <div class="b">
     <?php 
                 require_once('../functions/connect.php');
-                $result = $connect->prepare("SELECT * FROM `videos`");
+                $result = $connect->prepare("SELECT * FROM `output_videos`");
                 $result->execute();
                 while($row = $result->fetch(PDO::FETCH_ASSOC)){
                     ?>
                     <h2><?=$row['name_video']?></h2> 
-                    <video class="my" src="<?php 
+                    <a href="../output/go_to_video.php?id=<?echo $row['id']?>"><video class="my" src="<?php 
                                 if($row['ban']==1){
                                     $_SESSION['message'] = 'Видео забанено и скоро будет удалено!';
                                 }
@@ -90,22 +90,23 @@ if($response){
                                 }
                             ?>" poster="<?php
                             if($row['ban']==1){
-                                echo '../prewiew/deleted_video.jpg';
+                                echo '../prewiew/deleted_video.png';
                             }
                             else{
                                 echo '../' . $row['prewiew'];
                             }
                         ?>">
-                    </video>
+                    </video></a>
                     <?php 
                         if ($_SESSION['message']){
                             echo '<p class="message">' . $_SESSION['message'] . '</p>';
                         }
                         unset($_SESSION['message']);
                     ?>
-                    <h2><?=$row['name_user']?></h2> 
+                    <a href="../output/check_user.php?id=<?php echo $row['id_user']?>"><h2><?=$row['name_user']?></h2></a> 
+                    <p><?=$row['date']?></p>
                     <h2><?=$row['discription']?></h2>
-                    <img src="<?='../' . $row['avatar_user']?>" height="60" width="60" style="border-radius: 50px;" alt="">
+                    <a href="../output/check_user.php?id=<?php echo $row['id_user']?>"><img src="<?='../' . $row['avatar_user']?>" height="60" width="60" style="border-radius: 50px;" alt=""></a>
                     <?php
                 }
             ?>

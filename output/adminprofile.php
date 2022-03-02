@@ -34,9 +34,9 @@ if(!$_SESSION['admin']){
                 Видео
             </li>
         </a>
-        <a href="">
+        <a href="adminmoder.php">
             <li class="last_li">
-                My video
+                Модерация видео
             </li>
         </a>
     </ul>
