@@ -5,6 +5,6 @@
 
     $id = $_GET['id'];
 
-    $ban_user = $connect->prepare("UPDATE `videos` SET `ban` = 0 WHERE `id` = '$id'");
+    $ban_user = $connect->prepare("UPDATE `output_videos` SET `ban` = 0 WHERE `id` = '$id'");
     $ban_user->execute();
     header("Location: ../output/adminvideos.php");
