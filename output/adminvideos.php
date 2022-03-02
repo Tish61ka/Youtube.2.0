@@ -61,7 +61,7 @@ if(!$_SESSION['admin']){
                                 }
                             ?>" poster="<?php
                                 if($row['ban']==1){
-                                    echo '../prewiew/deleted_video.jpg';
+                                    echo '../prewiew/deleted_video.png';
                                 }
                                 else{
                                     echo '../' . $row['prewiew'];
@@ -76,6 +76,7 @@ if(!$_SESSION['admin']){
                                 }
                                 unset($_SESSION['message']);
                             ?> 
+                            <p><?=$row['date']?></p>
                             <a href="../functions/delete_video.php?id=<?php echo $row['id']?>">Удалить видео</a>
                             <a href="../functions/ban_video.php?id=<?php echo $row['id']?>">Забанить видео</a>
                             <a href="../functions/unban_video.php?id=<?php echo $row['id']?>">Разбанить видео</a>

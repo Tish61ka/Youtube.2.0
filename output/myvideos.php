@@ -68,7 +68,7 @@ if($response){
                 while($row = $result->fetch(PDO::FETCH_ASSOC)){
                     ?>
                     <div class="video">
-                    <video class="my" src="<?php 
+                    <a href="../output/go_to_video.php?id=<?php echo $row['id'] ?>"><video class="my" src="<?php 
                                 if($row['ban']==1){
                                     $_SESSION['message'] = 'Видео забанено и скоро будет удалено!';
                                 }
@@ -77,13 +77,14 @@ if($response){
                                 }
                             ?>" poster="<?php
                             if($row['ban']==1){
-                                echo '../prewiew/deleted_video.jpg';
+                                echo '../prewiew/deleted_video.png';
                             }
                             else{
                                 echo '../' . $row['prewiew'];
                             }
-                        ?>" controls></video>
+                        ?>"></video></a>
                     <p><?=$row['name_video']?></p>
+                            <p><?=$row['date']?></p>
                     <?php 
                                 if ($_SESSION['message']){
                                     echo '<p class="message">' . $_SESSION['message'] . '</p>';
@@ -91,10 +92,6 @@ if($response){
                                 unset($_SESSION['message']);
                             ?>
                     </div>
-                    <!--
-                        <h2>Описание:<?=$row['discription']?></h2>
-                        <img src="<?='../' . $row['avatar_user']?>" width="60" height="60" style="border-radius: 50px;" alt="">
-                    -->
                     <?php
                 }
             ?>

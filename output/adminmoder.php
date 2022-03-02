@@ -70,6 +70,7 @@ if(!$_SESSION['admin']){
                             </video>
                             <h2><?=$row['name_user']?></h2> 
                             <h2><?=$row['discription']?></h2>
+                            <p><?=$row['date']?></p>
                             <a href="../functions/delete_video_moder.php?id=<?php echo $row['id']?>">Отклонить видео</a>
                             <a href="../functions/output_video.php?id=<?php echo $row['id']?>">Принять видео</a>
                             <img src="<?='../' . $row['avatar_user']?>" height="60" width="60" style="border-radius: 50px;" alt="">                          
