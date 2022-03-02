@@ -1,5 +1,9 @@
 <?php
 session_start();
+if(!$_SESSION['admin']){
+    session_unset($_SESSION['admin']);
+    header('Location: singin.php');
+}
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -22,12 +26,12 @@ session_start();
     <ul class="ul_profile">
         <a href="adminprofile.php">
             <li>
-                Profile
+                Профили пользователей
             </li>
         </a>
         <a href="adminvideos.php">
             <li class="between_li">
-                Download video
+                Видео
             </li>
         </a>
         <a href="">

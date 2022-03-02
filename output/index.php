@@ -1,5 +1,22 @@
-<?php 
-    session_start();
+<?php
+session_start();
+if(!$_SESSION['user']){
+    session_unset($_SESSION['user']);
+    header('Location: singin.php');
+}
+require '../functions/connect.php';
+$sql = "SELECT * FROM `users`";
+$request = $connect->query($sql);
+$response = $request->fetchAll(PDO::FETCH_ASSOC);
+if($response){
+    for($i=0;$i<count($response);$i++){
+        if($response[$i]['id'] == $_SESSION['user']['id'] && $response[$i]['ban'] == 1){
+            session_unset();
+            $_SESSION['message'] = "Ваш аккаунт забанен!!";
+            header("Location: singin.php");
+        }
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="ru">
