@@ -1,8 +1,5 @@
 <?php
 session_start();
-if(!$_SESSION['admin']){
-    header('Location: singin.php');
-}
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -50,17 +47,38 @@ if(!$_SESSION['admin']){
                         ?>
                         <div class="video">
                             <h2><?=$row['name_video']?></h2> 
-                            <video class="my" src="<?='../' . $row['video']?>" poster="<?='../' . $row['prewiew']?>" controls>
+                            <video class="my" src="<?php 
+                                if($row['ban']==1){
+                                    $_SESSION['message'] = 'Видео забанено!';
+                                }
+                                else{
+                                    $_SESSION['message'] = 'Видео доступно!';
+                                    echo '../' . $row['video'];
+                                }
+                            ?>" poster="<?php
+                                if($row['ban']==1){
+                                    echo '../prewiew/deleted_video.jpg';
+                                }
+                                else{
+                                    echo '../' . $row['prewiew'];
+                                }
+                            ?>" controls>                           
                             </video>
                             <h2><?=$row['name_user']?></h2> 
                             <h2><?=$row['discription']?></h2>
-                            <div class="ava_and_del">
-                                <img src="<?='../' . $row['avatar_user']?>" height="60" width="60" style="border-radius: 50px;" alt="">
-                                <a href="../functions/delete_video.php?id=<?php echo $row['id']?>">Удалить видео</a>
-                            </div>                            
+                            <?php 
+                                if ($_SESSION['message']){
+                                    echo '<p class="message">' . $_SESSION['message'] . '</p>';
+                                }
+                                unset($_SESSION['message']);
+                            ?> 
+                            <a href="../functions/delete_video.php?id=<?php echo $row['id']?>">Удалить видео</a>
+                            <a href="../functions/ban_video.php?id=<?php echo $row['id']?>">Забанить видео</a>
+                            <a href="../functions/unban_video.php?id=<?php echo $row['id']?>">Разбанить видео</a>
+                            <img src="<?='../' . $row['avatar_user']?>" height="60" width="60" style="border-radius: 50px;" alt="">                          
                         </div>
                         <?php
-                }
+                    }
                 ?>
             </div>
                 

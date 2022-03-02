@@ -55,8 +55,28 @@ if(!$_SESSION['user']){
                 while($row = $result->fetch(PDO::FETCH_ASSOC)){
                     ?>
                     <div class="video">
-                    <video class="my" src="<?='../' . $row['video']?>" poster="<?='../' . $row['prewiew']?>" controls></video>
+                    <video class="my" src="<?php 
+                                if($row['ban']==1){
+                                    $_SESSION['message'] = 'Видео забанено и скоро будет удалено!';
+                                }
+                                else{
+                                    echo '../' . $row['video'];
+                                }
+                            ?>" poster="<?php
+                            if($row['ban']==1){
+                                echo '../prewiew/deleted_video.jpg';
+                            }
+                            else{
+                                echo '../' . $row['prewiew'];
+                            }
+                        ?>" controls></video>
                     <p><?=$row['name_video']?></p>
+                    <?php 
+                                if ($_SESSION['message']){
+                                    echo '<p class="message">' . $_SESSION['message'] . '</p>';
+                                }
+                                unset($_SESSION['message']);
+                            ?>
                     </div>
                     <!--
                         <h2>Описание:<?=$row['discription']?></h2>

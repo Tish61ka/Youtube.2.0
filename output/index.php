@@ -64,8 +64,28 @@
                 while($row = $result->fetch(PDO::FETCH_ASSOC)){
                     ?>
                     <h2><?=$row['name_video']?></h2> 
-                    <video class="my" src="<?='../' . $row['video']?>" poster="<?='../' . $row['prewiew']?>">
+                    <video class="my" src="<?php 
+                                if($row['ban']==1){
+                                    $_SESSION['message'] = 'Видео забанено и скоро будет удалено!';
+                                }
+                                else{
+                                    echo '../' . $row['video'];
+                                }
+                            ?>" poster="<?php
+                            if($row['ban']==1){
+                                echo '../prewiew/deleted_video.jpg';
+                            }
+                            else{
+                                echo '../' . $row['prewiew'];
+                            }
+                        ?>">
                     </video>
+                    <?php 
+                        if ($_SESSION['message']){
+                            echo '<p class="message">' . $_SESSION['message'] . '</p>';
+                        }
+                        unset($_SESSION['message']);
+                    ?>
                     <h2><?=$row['name_user']?></h2> 
                     <h2><?=$row['discription']?></h2>
                     <img src="<?='../' . $row['avatar_user']?>" height="60" width="60" style="border-radius: 50px;" alt="">
