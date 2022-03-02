@@ -4,30 +4,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/main1.css">
     <title>GameHUB</title>
 </head>
 <body>
     <header>
-        <div class="f">
-            <div class="container_2">
-                <div class="menu-burger__header">
-                    <span></span>
-                </div>
-                <nav class="header__nav">
-                    <ul class="menu header__menu">
-                        <li><a href="" class="menu__item">Главная</a></li>
-                        <li><a href="" class="menu__item">Товары</a></li>
-                        <li><a href="" class="menu__item">Акции</a></li>
-                        <li><a href="" class="menu__item">Новинки</a></li>
-                        <li><a href="" class="menu__item">Доставка</a></li>
-                        <li><a href="" class="menu__item">Контакты</a></li>
-                    </ul>
-                </nav>   
-                <a href="index.html"><img src="/pictures/лого.png" class="logo" alt=""></a>   
-                <form method="POST" action="search.php">
-                    <input class="input" type="text" name="search" required placeholder="Искать здесь...">
-                    <button class="button" type="submit" name="search_btn"><img src="https://img.icons8.com/ios-glyphs/30/000000/search--v1.png"/></button>
+            <div class="menu-burger__header">
+                <span></span>
+            </div>
+            <nav class="header__nav">
+                <ul class="menu header__menu">
+                    <li><a href="" class="menu__item">Главная</a></li>
+                    <li><a href="" class="menu__item">Товары</a></li>
+                    <li><a href="" class="menu__item">Акции</a></li>
+                    <li><a href="" class="menu__item">Новинки</a></li>
+                    <li><a href="" class="menu__item">Доставка</a></li>
+                    <li><a href="" class="menu__item">Контакты</a></li>
+                </ul>
+            </nav>   
+            <a class="logo1" href="index.html"><img src="/pictures/лого.png" class="logo" alt=""></a>   
+            <form method="POST" action="search.php">
+                <input class="input" type="text" name="search" required placeholder="Искать здесь...">
+                <button class="button" type="submit" name="search_btn"><img src="https://img.icons8.com/ios-glyphs/30/000000/search--v1.png"/></button>
             </form>
                <a href="./registration.php" class="log_in">
                    <button class="enter">
@@ -35,10 +33,9 @@
                     <p>Войти</p>
                 </button> 
                </a> 
-             </div>
     </header>
     <!-- OPEN MAIN -->
-    <div class="a">
+    <section class="a">
         <div id="carousel">
             <h1>Лучшие ролики недели</h1>
           <figure id="spinner">
@@ -51,12 +48,12 @@
             <img src="/pictures/Превью7.png" alt="Проверьте соединение с интернетом">
             <img src="/pictures/Превью8.png" alt="Проверьте соединение с интернетом">          
           </figure>
-        </div>
-        <span style="float:left; margin-right: 100px;" class="ss-icon" onclick="galleryspin('-')">&lt;</span>
+        </section>
+        <span style="float:left; margin-right: 100px;" class="ss-icon-1" onclick="galleryspin('-')">&lt;</span>
         <span style="margin-left: 1150px;" class="ss-icon" onclick="galleryspin('')">&gt;</span>
     </div>
-    <div class="b">
-    </div>
+    <section class="b"></section>
+    <!--
     <div class="container">
         <video src="/videos/1646205783DVR.mp4" controls></video>
         <video src="/videos/1646205783DVR.mp4" controls></video>
@@ -65,12 +62,13 @@
         <video src="/videos/1646205783DVR.mp4" controls></video>
         <video src="/videos/1646205783DVR.mp4" controls></video>
     </div>
-    <!-- CLOSE MAIN -->
+    <!-- CLOSE MAIN 
     <footer>
         <div class="e">footer</div>
     </footer>
+    -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="../js/script.js"></script> 
-    <script src="/js/slider.js"></script>
+    <script src="/js/slider.js"></script> 
 </body>
 </html>

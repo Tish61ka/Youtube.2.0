@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight:600;
+    font-size: 15px;
+}
+body{
+    background-color: #2a2827;
+    color: #ba45f0;
+}
+
+/* HEADER */
+header{
+    height: 17vh;
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid #ba45f0;
+}
+.logo1{
+    position: relative;
+    width: 200px;
+    height: 50px;
+    top: 40px;
+    left: 50px;
+}
+.logo{
+    position: relative;
+    width: 200px;
+    height: 50px;
+}
+
+/*Search*/
+
+form{
+    position: relative;
+    width: 35%;
+    margin-left: 6%;
+    margin-top: 0.3%;
+}
+.input{
+    position: relative;
+    background: transparent;
+    width: 35vw;
+    height: 42px;
+    padding-left: 10px;
+    border: 2px solid #ba45f0;
+    border-radius: 5px;
+    outline: none;
+    background: #2a2827;
+    color: #9E9C9C;
+    top: 40px;
+    margin-left: 100px;
+}
+form .button{
+    position: absolute; 
+    top: 40px;
+    right: 0px;
+    left: 612px;
+    width: 42px;
+    height: 42px;
+    border: none;
+    background: #ba45f0;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+form .button img{
+    position: absolute;
+    top: 6px;
+    right: 7px;
+}
+/*Close search*/
+.log_in{
+    width: 100px;
+    height: 36px;
+}
+.enter{
+    display: flex;
+    background: transparent;
+    position: relative;
+    right: -420px;
+    border: 2px solid #ba45f0;
+    float: right;
+    margin: 50px 0px 0px 36px;
+    width: 100px;
+    height: 36px;
+}
+.enter:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+.enter svg{
+    margin-top: 0.1vw;
+    margin-left: 0.3vw;
+}
+.enter p{
+    margin-top: 0.5vw;
+    margin-left: 0.3vw;
+    color: #ba45f0;
+    font-size: 16px;
+}
+
+/* Burger Menu */
+
+.header__nav {
+	display: block;
+	position: absolute;
+    background: #2d2b2b;
+    box-shadow: #ccc;
+    width: 11%;
+    box-shadow: 0 4px 2px -2px rgba(36, 36, 36, 0.37);
+    transition: all 0.4s ease-in-out;
+    left: -12%;
+    top: 17vh;
+
+}
+.header__menu {
+	display: block;
+    border-top: 1px #ba45f0 solid;
+    border-bottom: 1px #ba45f0 solid;
+    min-height: 268.5vh;
+}
+.header__nav.open-menu{
+    left:0;
+}
+.header__menu li {
+	list-style: none;
+	margin: 45px 0px 0px 36px;
+	color: #000;
+	font-size: 16px;
+	text-transform: uppercase;
+	text-decoration: none;
+	}
+    .menu__item{
+        color: #ba45f0;
+    }
+.menu-burger__header {
+	position: relative;
+    width: 40px;
+    height: 35px;
+    display: block;
+    margin-left: 50px;
+    top: 6vh;
+   }
+   .menu-burger__header:hover{
+       cursor: pointer;
+   }
+.menu-burger__header span, .menu-burger__header:after, .menu-burger__header:before{
+	height: 3px;
+	width: 40px;
+	position: absolute;
+	background: #a8acad;
+	left: 0px;
+}
+.menu-burger__header span{
+	top: 16px;
+}
+.menu-burger__header:after, .menu-burger__header:before{
+	content: '';
+}
+.menu-burger__header:after{
+	bottom: 5px;
+}
+.menu-burger__header:before{
+	top: 5px;
+}
+.menu-burger__header.open-menu span {
+	opacity:0; 
+    transition: 0.5s; 
+}
+.menu-burger__header.open-menu:before {
+	transform: rotate(38deg);
+    top: 16px;
+    transition: 0.4s;
+}
+.menu-burger__header.open-menu:after {
+	transform: rotate(-38deg);
+    bottom: 16px;
+    transition: 0.4s;
+}
+.fixed-pade {
+    overflow: hidden;
+}
+
+/* Close Burger Menu */
+/* CLOSE HEADER */
+
+/* Section a */
+/* Slider and block a*/
+
+div#carousel { 
+    perspective: 1300px; 
+    background: #2a2827; 
+    padding-top: 2%; 
+    font-size:0; 
+    margin-bottom: 3rem; 
+    overflow: hidden; 
+    height: 100%; 
+  }
+  div#carousel h1{
+      font-size: 22px;
+      color: #ba45f0;
+      text-align: center;
+  }
+  figure#spinner { 
+    transform-style: preserve-3d; 
+    height: 38vh; 
+    transform-origin: 50% 50% -500px; 
+    transition: 1s; 
+  } 
+  figure#spinner img { 
+    width: 50%; 
+    max-width: 420px; 
+    position: absolute; 
+    left: 33%;
+    top: 10%;
+    transform-origin: 50% 50% -500px;
+  outline:1px solid transparent; 
+}
+figure#spinner img:nth-child(1) { transform:rotateY(0deg); 
+}
+figure#spinner img:nth-child(2) { transform: rotateY(-45deg); }
+figure#spinner img:nth-child(3) { transform: rotateY(-90deg); }
+figure#spinner img:nth-child(4) { transform: rotateY(-135deg); }
+figure#spinner img:nth-child(5){ transform: rotateY(-180deg); }
+figure#spinner img:nth-child(6){ transform: rotateY(-225deg); }
+figure#spinner img:nth-child(7){ transform: rotateY(-270deg); }
+figure#spinner img:nth-child(8){ transform: rotateY(-315deg); }
+.ss-icon-1{
+    position: absolute;
+    top: 320px;
+    left: 210px;
+    font-size: 3rem; 
+}  
+.ss-icon{
+    position: absolute;
+    top: 320px;
+    right: 290px;
+    font-size: 3rem; 
+}
+.ss-icon, .ss-icon-1:hover{
+    cursor: pointer; 
+}
+  div#carousel ~ span { 
+    color: #fff; 
+    margin: 5%; 
+    display: inline-block; 
+    text-decoration: none; 
+    transition: 0.6s color; 
+    position: relative; 
+    margin-top: -6rem; 
+    border-bottom: none; 
+    line-height: 0; 
+}
+  div#carousel ~ span:hover { 
+      color: #888; 
+     
+    }
+/* Close Slider */
+/* close section a*/
+
+/* Section b*/
+.b{
+    margin-top: -50px;
+    background-image: url(/pictures/Фон\ для\ блокa\ b.png);
+    background-size: cover;
+    height: 120px;
+}
+/* close section b*/

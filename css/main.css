@@ -12,7 +12,7 @@
 body{
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 100px 25vw 25vw 1fr 100px;
+    grid-template-rows: 100px 25vw 10vw 1fr 100px;
     grid-gap: 2%;
     background-color: #2a2827;
     color: #ba45f0;
@@ -21,7 +21,6 @@ body{
 
 /* HEADER */
 header{
-    display: grid;
     grid-column: 1/13;
     grid-row: 1/2;
     color: white;
@@ -285,9 +284,6 @@ div#carousel {
 }
 /* Close Slider */
 
-@media(max-width: 767px){
-
-}
 .a{
     display: grid;
     grid-column: 2/12;
@@ -297,10 +293,11 @@ div#carousel {
 }
 .b{
     display: grid;
-    grid-column: 2/12;
+    grid-column: 1/13;
     grid-row: 3/4;
     color: white;
-    background-color: yellow;
+    background-image: url(/pictures/Фон\ для\ блокa\ b.png);
+    background-size: cover;
 }
 .c{
     color: white;
@@ -308,11 +305,11 @@ div#carousel {
 }
 .d{
     color: white;
-    background-color: plum;
+   
 }
 .e{
     color: white;
-    background-color: aquamarine;
+    
 }
 .f{
     color: white;
@@ -322,12 +319,18 @@ div#carousel {
 /* MAIN */
 
 .container {
-    grid-column: 2/12;
+    grid-column: 1/13;
     grid-row: 4/5;
-    display: grid;
-    grid-gap: 5px;
-    grid-template-columns: repeat(auto-fit, minmax(430px, 1fr));
-    grid-template-rows: repeat(3, 50vw);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-image: url(/pictures/background\ video1.png);
+    background-size: 100%;
+}
+.container video{
+    width: 400px;
+    height: 250px;
+    margin-left: 60px;
 }
 
 /* FOOTER */
@@ -369,7 +372,7 @@ footer{
 
 @media (min-width: 1200px) and (max-width: 1640px){
     body{
-        grid-template-rows: 120px 25vw 25vw 1fr 100px;
+        grid-template-rows: 120px 25vw 7vw 35.2vw 100px;
     }
     .container{
         grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
