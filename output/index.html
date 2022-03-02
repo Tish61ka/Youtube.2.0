@@ -4,30 +4,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/main1.css">
     <title>GameHUB</title>
 </head>
 <body>
     <header>
-        <div class="f">
-            <div class="container_2">
-                <div class="menu-burger__header">
-                    <span></span>
-                </div>
-                <nav class="header__nav">
-                    <ul class="menu header__menu">
-                        <li><a href="" class="menu__item">Главная</a></li>
-                        <li><a href="" class="menu__item">Товары</a></li>
-                        <li><a href="" class="menu__item">Акции</a></li>
-                        <li><a href="" class="menu__item">Новинки</a></li>
-                        <li><a href="" class="menu__item">Доставка</a></li>
-                        <li><a href="" class="menu__item">Контакты</a></li>
-                    </ul>
-                </nav>   
-                <a href="index.html"><img src="/pictures/лого.png" class="logo" alt=""></a>   
-                <form method="POST" action="search.php">
-                    <input class="input" type="text" name="search" required placeholder="Искать здесь...">
-                    <button class="button" type="submit" name="search_btn"><img src="https://img.icons8.com/ios-glyphs/30/000000/search--v1.png"/></button>
+            <div class="menu-burger__header">
+                <span></span>
+            </div>
+            <nav class="header__nav">
+                <ul class="menu header__menu">
+                    <li><a href="" class="menu__item">Главная</a></li>
+                    <li><a href="" class="menu__item">Товары</a></li>
+                    <li><a href="" class="menu__item">Акции</a></li>
+                    <li><a href="" class="menu__item">Новинки</a></li>
+                    <li><a href="" class="menu__item">Доставка</a></li>
+                    <li><a href="" class="menu__item">Контакты</a></li>
+                </ul>
+            </nav>   
+            <a class="logo1" href="index.html"><img src="/pictures/лого.png" class="logo" alt=""></a>   
+            <form method="POST" action="search.php">
+                <input class="input" type="text" name="search" required placeholder="Искать здесь...">
+                <button class="button" type="submit" name="search_btn"><img src="https://img.icons8.com/ios-glyphs/30/000000/search--v1.png"/></button>
             </form>
                <a href="./registration.php" class="log_in">
                    <button class="enter">
@@ -35,10 +33,9 @@
                     <p>Войти</p>
                 </button> 
                </a> 
-             </div>
     </header>
     <!-- OPEN MAIN -->
-    <div class="a">
+    <section class="a">
         <div id="carousel">
             <h1>Лучшие ролики недели</h1>
           <figure id="spinner">
@@ -52,25 +49,61 @@
             <img src="/pictures/Превью8.png" alt="Проверьте соединение с интернетом">          
           </figure>
         </div>
-        <span style="float:left; margin-right: 100px;" class="ss-icon" onclick="galleryspin('-')">&lt;</span>
+        <span style="float:left; margin-right: 100px;" class="ss-icon-1" onclick="galleryspin('-')">&lt;</span>
         <span style="margin-left: 1150px;" class="ss-icon" onclick="galleryspin('')">&gt;</span>
-    </div>
-    <div class="b">
-    </div>
-    <div class="container">
-        <video src="/videos/1646205783DVR.mp4" controls></video>
-        <video src="/videos/1646205783DVR.mp4" controls></video>
-        <video src="/videos/1646205783DVR.mp4" controls></video>
-        <video src="/videos/1646205783DVR.mp4" controls></video>
-        <video src="/videos/1646205783DVR.mp4" controls></video>
-        <video src="/videos/1646205783DVR.mp4" controls></video>
-    </div>
-    <!-- CLOSE MAIN -->
+</section>
+    <section class="b"></section>
+    
+    <section class="video_section">
+        <div class="container">
+            <video src="/videos/1646218823DVR.mp4" controls></video>
+            <video src="/videos/1646218823DVR.mp4" controls></video>
+            <video src="/videos/1646218823DVR.mp4" controls></video>
+            <video src="/videos/1646218823DVR.mp4" controls></video>
+            <video src="/videos/1646218823DVR.mp4" controls></video>
+            <video src="/videos/1646218823DVR.mp4" controls></video>
+        </div>
+    </section>
+    <section class="more_info">
+        <div class="info" id="ul_two">
+            <h1>Распространенные вопросы</h1>
+            <ul>
+                <li id="ul_qe">
+                    <p>Что из себя представляет GameHub?</p>
+                    <button id="qu" onclick="document.getElementById('ul_qe').style.height = document.getElementById('ul_qe').offsetHeight + 90 + 'px'; document.getElementById('qu').style.display = 'none'; document.getElementById('close').style.display ='block'; document.getElementById('ul_two').style.height = document.getElementById('ul_two').offsetHeight + 90 + 'px';  document.getElementById('magic_txt').style.display = 'block';  document.getElementById('magic_txt').style.transitionDelay = 500 + 'ms'">+</button>
+                    <button id="close" class="close" onclick="document.getElementById('ul_qe').style.height = document.getElementById('ul_qe').offsetHeight - 90 + 'px'; document.getElementById('close').style.display ='none'; document.getElementById('qu').style.display = 'block'; document.getElementById('ul_two').style.height = document.getElementById('ul_two').offsetHeight - 90 + 'px';  document.getElementById('magic_txt').style.display = 'none'; document.getElementById('magic_txt').style.transitionDelay = 500 + 'ms'">+</button>
+                    <div id="magic_txt">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam beatae quia quis ipsum. Repellendus adipisci repellat omnis minima nulla dolor similique optio obcaecati delectus? Tempora suscipit delectus eum cupiditate perspiciatis?
+                    </div>
+                </li>
+                <li id="ul_qe2">
+                    <p>Что можно посмотреть на GameHub?</p>
+                    <button id="qu2" onclick="document.getElementById('ul_qe2').style.height = document.getElementById('ul_qe2').offsetHeight + 90 + 'px'; document.getElementById('qu2').style.display = 'none'; document.getElementById('close2').style.display ='block'; document.getElementById('ul_two').style.height = document.getElementById('ul_two').offsetHeight + 90 + 'px';  document.getElementById('magic_txt2').style.display = 'block';  document.getElementById('magic_txt2').style.transitionDelay = 500 + 'ms'">+</button>
+                    <button id="close2" class="close" onclick="document.getElementById('ul_qe2').style.height = document.getElementById('ul_qe2').offsetHeight - 90 + 'px'; document.getElementById('close2').style.display ='none'; document.getElementById('qu2').style.display = 'block'; document.getElementById('ul_two').style.height = document.getElementById('ul_two').offsetHeight - 90 + 'px';  document.getElementById('magic_txt2').style.display = 'none'; document.getElementById('magic_txt2').style.transitionDelay = 500 + 'ms'">+</button>
+                    <div id="magic_txt2">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam beatae quia quis ipsum. Repellendus adipisci repellat omnis minima nulla dolor similique optio obcaecati delectus? Tempora suscipit delectus eum cupiditate perspiciatis?
+                    </div>
+                </li>
+                <li id="ul_qe3">
+                    <p>Подходит ли контент GameHub дял детей?</p>
+                    <button id="qu3" onclick="document.getElementById('ul_qe3').style.height = document.getElementById('ul_qe3').offsetHeight + 90 + 'px'; document.getElementById('qu3').style.display = 'none'; document.getElementById('close3').style.display ='block'; document.getElementById('ul_two').style.height = document.getElementById('ul_two').offsetHeight + 90 + 'px';  document.getElementById('magic_txt3').style.display = 'block';  document.getElementById('magic_txt3').style.transitionDelay = 500 + 'ms'">+</button>
+                    <button id="close3" class="close" onclick="document.getElementById('ul_qe3').style.height = document.getElementById('ul_qe3').offsetHeight - 90 + 'px'; document.getElementById('close3').style.display ='none'; document.getElementById('qu3').style.display = 'block'; document.getElementById('ul_two').style.height = document.getElementById('ul_two').offsetHeight - 90 + 'px';  document.getElementById('magic_txt3').style.display = 'none'; document.getElementById('magic_txt3').style.transitionDelay = 500 + 'ms'">+</button>
+                    <div id="magic_txt3">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam beatae quia quis ipsum. Repellendus adipisci repellat omnis minima nulla dolor similique optio obcaecati delectus? Tempora suscipit delectus eum cupiditate perspiciatis?
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <!-- CLOSE MAIN   -->
     <footer>
         <div class="e">footer</div>
     </footer>
+  
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src='http://code.jquery.com/jquery-2.1.1.min.js'></script>
     <script src="../js/script.js"></script> 
-    <script src="/js/slider.js"></script>
+    <script src="/js/slider.js"></script> 
+    <script src="/js/question.js"></script>
 </body>
 </html>
