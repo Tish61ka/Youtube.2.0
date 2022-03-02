@@ -4,6 +4,19 @@ if(!$_SESSION['user']){
     session_unset($_SESSION['user']);
     header('Location: singin.php');
 }
+require '../functions/connect.php';
+$sql = "SELECT * FROM `users`";
+$request = $connect->query($sql);
+$response = $request->fetchAll(PDO::FETCH_ASSOC);
+if($response){
+    for($i=0;$i<count($response);$i++){
+        if($response[$i]['id'] == $_SESSION['user']['id'] && $response[$i]['ban'] == 1){
+            session_unset();
+            $_SESSION['message'] = "Ваш аккаунт забанен!!";
+            header("Location: singin.php");
+        }
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -17,8 +30,6 @@ if(!$_SESSION['user']){
 <header>
     <a href="index.php"><img src="../pictures/лого.png" class="logo" alt=""></a>
 </header>
-<body>
-    <p><?=$_SESSION['user']['id']?></p>
 <div class="line-right">
 <div class="icon">
     <div class="crop">
@@ -31,17 +42,17 @@ if(!$_SESSION['user']){
     <ul class="ul_profile">
         <a href="myprofile.php">
             <li>
-                Profile
+                Профиль
             </li>
         </a>
         <a href="">
             <li class="between_li">
-                Download video
+                Загрузить видео
             </li>
         </a>
         <a href="myvideos.php">
             <li class="last_li">
-                My video
+                Мои видео
             </li>
         </a>
     </ul>

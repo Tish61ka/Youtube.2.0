@@ -1,6 +1,7 @@
 <?php
 session_start();
 if(!$_SESSION['admin']){
+    session_unset($_SESSION['admin']);
     header('Location: singin.php');
 }
 ?>
@@ -17,7 +18,6 @@ if(!$_SESSION['admin']){
     <a href=""><img src="../pictures/лого.png" class="logo" alt=""></a>
 </header>
 <body>
-    <p><?=$_SESSION['admin']['id']?></p>
 <div class="line-right">
 <div class="icon">
           <p>Никнейм: <?=$_SESSION['admin']['nick_name']?></p>
@@ -26,12 +26,12 @@ if(!$_SESSION['admin']){
     <ul class="ul_profile">
         <a href="adminprofile.php">
             <li class="between_li">
-                Profile
+                Профили пользователей
             </li>
         </a>
         <a href="adminvideos.php">
             <li>
-                Download video
+                Видео
             </li>
         </a>
         <a href="">
