@@ -63,7 +63,7 @@ if($response){
             <?php 
                 require_once('../functions/connect.php');
                 $id_user = $_SESSION['user']['id'];
-                $result = $connect->prepare("SELECT * FROM `videos` WHERE `id_user` = '$id_user'");
+                $result = $connect->prepare("SELECT * FROM `output_videos` WHERE `id_user` = '$id_user'");
                 $result->execute();
                 while($row = $result->fetch(PDO::FETCH_ASSOC)){
                     ?>

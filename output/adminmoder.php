@@ -11,11 +11,11 @@ if(!$_SESSION['admin']){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/adminvideos.css">
+    <link rel="stylesheet" href="../css/adminmoder.css">
     <title>Профиль администратора</title>
 </head>
 <header>
-    <a href="index.php"><img src="../pictures/лого.png" class="logo" alt=""></a>
+    <a href=""><img src="../pictures/лого.png" class="logo" alt=""></a>
 </header>
 <body>
 <div class="line-right">
@@ -30,7 +30,7 @@ if(!$_SESSION['admin']){
             </li>
         </a>
         <a href="adminvideos.php">
-            <li class="between_li">
+            <li>
                 Видео
             </li>
         </a>
@@ -42,10 +42,10 @@ if(!$_SESSION['admin']){
     </ul>
 </div>
         <section>
-            <div class="container">
+        <div class="container">
                 <?php 
                     require_once('../functions/connect.php');
-                    $result = $connect->prepare("SELECT * FROM `output_videos`");
+                    $result = $connect->prepare("SELECT * FROM `videos`");
                     $result->execute();
                     while($row = $result->fetch(PDO::FETCH_ASSOC)){
                         ?>
@@ -70,23 +70,14 @@ if(!$_SESSION['admin']){
                             </video>
                             <h2><?=$row['name_user']?></h2> 
                             <h2><?=$row['discription']?></h2>
-                            <?php 
-                                if ($_SESSION['message']){
-                                    echo '<p class="message">' . $_SESSION['message'] . '</p>';
-                                }
-                                unset($_SESSION['message']);
-                            ?> 
-                            <a href="../functions/delete_video.php?id=<?php echo $row['id']?>">Удалить видео</a>
-                            <a href="../functions/ban_video.php?id=<?php echo $row['id']?>">Забанить видео</a>
-                            <a href="../functions/unban_video.php?id=<?php echo $row['id']?>">Разбанить видео</a>
+                            <a href="../functions/delete_video_moder.php?id=<?php echo $row['id']?>">Отклонить видео</a>
+                            <a href="../functions/output_video.php?id=<?php echo $row['id']?>">Принять видео</a>
                             <img src="<?='../' . $row['avatar_user']?>" height="60" width="60" style="border-radius: 50px;" alt="">                          
                         </div>
                         <?php
                     }
                 ?>
             </div>
-                
-       
         </section>
         <a class="logout" href="../functions/logout.php">
             <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"

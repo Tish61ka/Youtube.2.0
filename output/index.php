@@ -76,7 +76,7 @@ if($response){
     <div class="b">
     <?php 
                 require_once('../functions/connect.php');
-                $result = $connect->prepare("SELECT * FROM `videos`");
+                $result = $connect->prepare("SELECT * FROM `output_videos`");
                 $result->execute();
                 while($row = $result->fetch(PDO::FETCH_ASSOC)){
                     ?>
