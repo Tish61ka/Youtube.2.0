@@ -28,7 +28,7 @@ header{
 
 /*Close header*/
 
-/* Style form */
+/* Style left menu */
 .line-right{
     position: absolute;
     height: 110vh;
@@ -39,7 +39,7 @@ header{
     position: relative;
     float: left;
     top: 20px;
-    left: 0px;
+    left: 50px;
     display: flex;
     flex-direction: column;
 }
@@ -78,10 +78,8 @@ header{
     text-align: center;
     padding: 27px 0;
 }
-.between_li{
-    color: white;
-}
 .last_li{
+    color: white;
     border-bottom: 1px solid #5f5f5f;
 }
 .ul_profile li:hover{
@@ -89,80 +87,9 @@ header{
     color: white;
     transition: 300ms;
 }
-ul{
-    display: flex;
-    flex-direction: row;
-}
-.second_li{
-    margin-top: -50px;
-    margin-left: 100px;
-}
-.video{
-    margin-top: 30px;
-    display: flex;
-    flex-direction: column;
-    margin-right: 70px;
-}
-.video a{
-    border: 1px solid #ba45f0;
-    padding: 7px;
-    border-radius: 10px;
-    background: transparent;
-    position: relative;
-    overflow: hidden;
-    transition: color 300ms ease-in-out;
-}
-.video a:after {
-  content: '';
-  position: absolute;
-  display: block;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 0;
-  height: 100%;
-  background: #ba45f0;
-  z-index: -1;
-  transition: width 300ms ease-in-out;
-}
-.video a:hover {
-  color: #fff;
-  cursor: pointer;
-}
-.video a:hover:after {
-  width: 110%;
-}
-.video h1{
-  position: absolute;
-  font-size: 16px;
-  color: white;
-  top: 52.9vh;
-  margin-left: 50px;
-}
-.video h2{
-  position: absolute;
-  font-size: 16px;
-  top: 55.4vh;
-  margin-left: 50px;
-}
-.video h3{
-    font-size: 17px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
-.message{
-    position: absolute;
-    font-size: 16px;
-    margin-left: 310px;
-    top: 55.4vh;
-}
-.video .p{
-  position: absolute;
-  font-size: 16px;
-  top: 52.9vh;
-  margin-left: 360px;
-  color: white;
-}
+/* close menu left*/
+
+/* Style videos*/
 .container{
     display: flex;
     flex-direction: row;
@@ -171,20 +98,39 @@ ul{
     max-width: 1100px;
     margin-left: 400px;
 }
+.video{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    margin-right: 70px;
+}
+.video h1{
+    position: absolute;
+    font-size: 16px;
+    color: white;
+    top: 51.9vh;
+    margin-left: 5px;
+  }
+  .message{
+    position: absolute;
+    font-size: 16px;
+    margin-left: 310px;
+    top: 55.4vh;
+}
+.video .p{
+  position: absolute;
+  font-size: 16px;
+  top: 51.9vh;
+  margin-left: 361px;
+  color: white;
+}
 .my{
     width: 450px;
     height: 275px;
     border-radius: 10px;
     margin-bottom: 15px;
 }
-.ava_and_del{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
- 
-/* Close style form*/
-
+/* Close style videos */
 .logout{
     position: absolute;
     top: 20px;

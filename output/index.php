@@ -55,19 +55,20 @@ if($response){
              </div>
     </header>
     <!---->
+    
     <!-- OPEN MAIN -->
     <div class="a">
         <div id="carousel">
             <h1>Лучшие ролики недели</h1>
           <figure id="spinner">
-            <img src="/pictures/Превью1.png" alt>
-            <img src="/pictures/Превью2.png" alt>
-            <img src="/pictures/Превью3.png" alt>
-            <img src="/pictures/Превью4.png" alt>
-            <img src="/pictures/Превью5.png" alt>
-            <img src="/pictures/Превью6.png" alt>
-            <img src="/pictures/Превью7.png" alt>
-            <img src="/pictures/Превью8.png" alt>
+            <video poster="/pictures/Превью1.png" alt src="/videos\1646247182DVR.mp4"></video>
+            <video poster="/pictures/Превью2.png" alt src="/videos\1646247182DVR.mp4"></video>
+            <video poster="/pictures/Превью3.png" alt src="/videos\1646247182DVR.mp4"></video>
+            <video poster="/pictures/Превью4.png" alt src="/videos\1646247182DVR.mp4"></video>
+            <video poster="/pictures/Превью5.png" alt src="/videos\1646247182DVR.mp4"></video>
+            <video poster="/pictures/Превью6.png" alt src="/videos\1646247182DVR.mp4"></video>
+            <video poster="/pictures/Превью7.png" alt src="/videos\1646247182DVR.mp4"></video>
+            <video poster="/pictures/Превью8.png" alt src="/videos\1646247182DVR.mp4"></video>
           </figure>
         </div>
         <span style="float:left; margin-right: 100px;" class="ss-icon" onclick="galleryspin('-')">&lt;</span>
@@ -111,19 +112,10 @@ if($response){
                 }
             ?>
     </div>
-    <!-- <div class="container">
-        <div class="c"></div>
-        <div class="d">element</div>
-        <div class="e">element</div>
-        <div class="e">element</div>
-    </div> -->
-    <!-- CLOSE MAIN -->
-    <!-- <footer>
-        <div class="e">footer</div>
-    </footer> -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="../js/script.js"></script> 
-    <script src="../js/slider.js"></script>
+    <script src="/js/slider.js"></script> 
+    <script src="/js/question.js"></script>
 
 </body>
 </html>

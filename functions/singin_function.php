@@ -35,7 +35,7 @@
                     "email" => $user['email'],
                     "ban" => $user['ban']
                 ];
-                header('Location: ../output/profile.php');
+                header('Location: ../output/myprofile.php');
             }        
         }
         else{

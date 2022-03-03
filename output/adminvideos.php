@@ -50,7 +50,6 @@ if(!$_SESSION['admin']){
                     while($row = $result->fetch(PDO::FETCH_ASSOC)){
                         ?>
                         <div class="video">
-                            <h2><?=$row['name_video']?></h2> 
                             <video class="my" src="<?php 
                                 if($row['ban']==1){
                                     $_SESSION['message'] = 'Видео забанено!';
@@ -68,19 +67,20 @@ if(!$_SESSION['admin']){
                                 }
                             ?>" controls>                           
                             </video>
+                            <img src="<?='../' . $row['avatar_user']?>" height="40" width="40" style="border-radius: 50px;" alt="">
+                            <h1><?=$row['name_video']?></h2> 
                             <h2><?=$row['name_user']?></h2> 
-                            <h2><?=$row['discription']?></h2>
+                            <h3>Описание: <br><?=$row['discription']?></h2>
                             <?php 
                                 if ($_SESSION['message']){
                                     echo '<p class="message">' . $_SESSION['message'] . '</p>';
                                 }
                                 unset($_SESSION['message']);
                             ?> 
-                            <p><?=$row['date']?></p>
+                            <p class="p"><?=$row['date']?></p>
                             <a href="../functions/delete_video.php?id=<?php echo $row['id']?>">Удалить видео</a>
                             <a href="../functions/ban_video.php?id=<?php echo $row['id']?>">Забанить видео</a>
-                            <a href="../functions/unban_video.php?id=<?php echo $row['id']?>">Разбанить видео</a>
-                            <img src="<?='../' . $row['avatar_user']?>" height="60" width="60" style="border-radius: 50px;" alt="">                          
+                            <a href="../functions/unban_video.php?id=<?php echo $row['id']?>">Разбанить видео</a>                          
                         </div>
                         <?php
                     }

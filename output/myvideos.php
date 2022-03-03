@@ -83,7 +83,7 @@ if($response){
                                 echo '../' . $row['prewiew'];
                             }
                         ?>"></video></a>
-                    <p><?=$row['name_video']?></p>
+                            <p><?=$row['name_video']?></p>
                             <p><?=$row['date']?></p>
                     <?php 
                                 if ($_SESSION['message']){
