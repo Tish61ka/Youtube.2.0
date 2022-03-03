@@ -547,6 +547,13 @@ footer div{
     margin-top: -120px;
     margin-left: 550px;
 }
+footer div a svg{
+    transition: 300ms ease-in-out;
+}
+footer div a:hover > svg{
+    transform: scale(1.1);
+    transform: scale(1.1);
+}
 footer img{
     position: absolute;
     right: 50px;
