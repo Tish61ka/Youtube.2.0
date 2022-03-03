@@ -65,7 +65,7 @@ if($response){
                 </div>
                 <div>
                     <label class="label_area" for="">Описание</label> 
-                    <textarea name="discription" id="" cols="30" rows="10" placeholder="Введите описание видео"></textarea>
+                    <textarea name="discription" id="" type="text" cols="30" rows="10" placeholder="Введите описание видео"></textarea>
                 </div> 
                     <div>
                     <input type="file" name="video" class="button_file" id="a"> 

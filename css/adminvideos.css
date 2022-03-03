@@ -136,30 +136,31 @@ ul{
   position: absolute;
   font-size: 16px;
   color: white;
-  top: 52.9vh;
+  top: 55vh;
   margin-left: 50px;
 }
 .video h2{
   position: absolute;
   font-size: 16px;
-  top: 55.4vh;
+  top: 57vh;
   margin-left: 50px;
 }
 .video h3{
     font-size: 17px;
     margin-top: 10px;
     margin-bottom: 10px;
+    width: 450px;
   }
 .message{
     position: absolute;
     font-size: 16px;
     margin-left: 310px;
-    top: 55.4vh;
+    top: 57vh;
 }
 .video .p{
   position: absolute;
   font-size: 16px;
-  top: 52.9vh;
+  top: 55vh;
   margin-left: 360px;
   color: white;
 }

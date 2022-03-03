@@ -140,13 +140,13 @@ header{
     position: absolute;
     font-size: 16px;
     color: white;
-    top: 52.9vh;
+    top: 55vh;
     margin-left: 50px;
   }
   .video h2{
     position: absolute;
     font-size: 16px;
-    top: 55.4vh;
+    top: 57vh;
     margin-left: 50px;
   }
   .video h3{
@@ -154,11 +154,12 @@ header{
       margin-top: 10px;
       margin-bottom: 10px;
       color: white;
+      width: 450px;
     }
   .video .p{
     position: absolute;
     font-size: 16px;
-    top: 55.4vh;
+    top: 57vh;
     margin-left: 360px;
     color: white;
   }

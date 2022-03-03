@@ -90,7 +90,7 @@ if($response){
     ?>
     <!--Конец какого то говна и начало нормального кода-->
     <section class="info_under_video">
-        <img src="<?=$video['avatar_user']?>" alt="">                   
+        <a href="../output/check_user.php?id=<?php echo $video['id_user']?>"><img src="<?=$video['avatar_user']?>" alt=""></a>          
         <h1><?=$video['name_video']?></h1>
         <h2><?=$video['name_user']?></h2>
         <p>Дата публикации видео:<?=' ', $video['date']?></p>
