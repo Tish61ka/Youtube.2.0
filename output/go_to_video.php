@@ -1,7 +1,7 @@
 <?php
 session_start();
 if(!$_SESSION['user']){
-    session_unset($_SESSION['user']);
+    unset($_SESSION['user']);
     header('Location: singin.php');
 }
 require '../functions/connect.php';
@@ -91,7 +91,7 @@ if($response){
     ?>
     <!--Конец какого то говна и начало нормального кода-->
     <section class="info_under_video">
-        <a href="../output/check_user.php?id=<?php echo $video['id_user']?>"><img src="<?=$video['avatar_user']?>" alt=""></a>          
+        <a href="../output/check_user.php?id=<?php echo $video['id_user']?>"><img src="<?='../'. $video['avatar_user']?>" alt=""></a>          
         <h1><?=$video['name_video']?></h1>
         <h2><?=$video['name_user']?></h2>
         <p>Дата публикации видео:<?=' ', $video['date']?></p>
@@ -119,7 +119,7 @@ if($response){
             while($comm = $output_comm->fetch(PDO::FETCH_ASSOC)){
                 ?>                
         <div class="comment">
-        <a href="../output/check_user.php?id=<?php echo $video['id_user']?>"><img src="<?=$video['avatar_user']?>" alt=""></a>
+        <a href="../output/check_user.php?id=<?php echo $comm['id_user']?>"><img src="<?='../' . $comm['avatar_user']?>" alt=""></a>
                 <div>
                     <p><?=$comm['name_user']?></p>
                     <?=$comm['comment']?>

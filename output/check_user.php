@@ -1,7 +1,7 @@
 <?php
 session_start();
 if(!$_SESSION['user']){
-    session_unset($_SESSION['user']);
+    unset($_SESSION['user']);
     header('Location: singin.php');
 }
 require '../functions/connect.php';

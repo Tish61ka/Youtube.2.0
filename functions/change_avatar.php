@@ -17,8 +17,10 @@
         $userID = $_SESSION['user']['id'];
         $change_avatar = $connect->prepare("UPDATE `users` SET `avatar` = '$new_avatar' WHERE `id` = '$userID'");
         $change_avatar->execute();
-        $change_avatar_video = $connect->prepare("UPDATE `videos` SET `avatar_user` = '$new_avatar' WHERE `id_user` = '$userID'");
+        $change_avatar_video = $connect->prepare("UPDATE `output_videos` SET `avatar_user` = '$new_avatar' WHERE `id_user` = '$userID'");
         $change_avatar_video->execute();
+        $change_avatar_comm = $connect->query("UPDATE `comments` SET `avatar_user` = '$new_avatar' WHERE `id_user` = '$userID'");
+
         $_SESSION['user']['avatar'] = $new_avatar;
         header("Location: ../output/myprofile.php");
     }

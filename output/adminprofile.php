@@ -1,8 +1,7 @@
 <?php
 session_start();
 if(!$_SESSION['admin']){
-    session_unset($_SESSION['admin']);
-    header('Location: singin.php');
+    
 }
 ?>
 <!DOCTYPE html>
