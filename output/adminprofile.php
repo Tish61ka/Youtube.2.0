@@ -67,6 +67,23 @@ if(!$_SESSION['admin']){
                 ?>
                 </table>
             </div>
+            <table>
+            <?php
+                require_once('../functions/connect.php');
+                $output_comm = $connect->query("SELECT * FROM `comments`");
+                while($comm = $output_comm->fetch(PDO::FETCH_ASSOC)){                
+                    ?>
+                    <tr>
+                        <td>ID Коментария: <?=$comm['id']?></td>
+                        <td>Коментарий: <?=$comm['comment']?></td>
+                        <td>ID видео: <?=$comm['id_video']?></td>
+                        <td>Кто оставил: <?=$comm['name_user']?></td>
+                        <td class="btn"><a href="../functions/delete_comment.php?id=<?php echo $comm['id'] ?>">Delete</a></td>
+                    </tr>                    
+                    <?php
+                }
+            ?>
+            </table> 
         </section>
         <a class="logout" href="../functions/logout.php">
             <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"

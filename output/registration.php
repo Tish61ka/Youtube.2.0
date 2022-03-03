@@ -59,7 +59,7 @@
                             echo '<p class="message">' . $_SESSION['message'] . '</p>';
                         }
                         unset($_SESSION['message']);
-                            ?> 
+                    ?> 
                 </form>
             </li>
         </ul>

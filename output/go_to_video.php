@@ -102,17 +102,29 @@ if($response){
     </section>
     <img class="under_video" src="/pictures/pictureonfooter.png" alt="">
     <section class="comments">
-        <form action="">
+        <form action="../functions/comments_functions.php" method="GET">
             <h1>Оставьте комментарий к видео:)</h1>
-            <textarea name="text" id="" cols="30" rows="5" placeholder="Напишите комментарий..."></textarea>
+            <textarea name="comment" id="" cols="30" rows="5" placeholder="Напишите комментарий..."></textarea>
+            <input type="hidden" name="id_video" value="<?php echo $video['id'] ?>">
             <input type="submit" value="Отправить">
         </form>
     </section>
     <img class="under_comment" src="/pictures/pictureonfooter.png" alt="">
     <section class="other_commets">
+        <?php 
+            require_once('../functions/connect.php');
+            $id_video = $video['id'];
+            $output_comm = $connect->query("SELECT * FROM `comments` WHERE `id_video` = '$id_video'");
+            while($comm = $output_comm->fetch(PDO::FETCH_ASSOC)){
+                ?>                
         <div class="comment">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore libero vel accusantium eligendi quo repudiandae nihil soluta vitae non, animi facere voluptates eos corporis nostrum quae tempora, sint reprehenderit sed! 
+                <img src="<?='../' . $comm['avatar_user']?>" width="60" height="60" style="border-radius: 30px;" alt="">
+                <p><?=$comm['name_user']?></p>
+                <?=$comm['comment']?>
         </div>
+        <?php
+            }
+        ?>
     </section>
     <img class="on_footer" src="/pictures/pictureonfooter.png" alt="">
     <footer>

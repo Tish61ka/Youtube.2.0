@@ -47,6 +47,7 @@ if(!$_SESSION['admin']){
                     require_once('../functions/connect.php');
                     $result = $connect->prepare("SELECT * FROM `output_videos`");
                     $result->execute();
+                    // $check = $result->fetch(PDO::FETCH_ASSOC);
                     while($row = $result->fetch(PDO::FETCH_ASSOC)){
                         ?>
                         <div class="video">

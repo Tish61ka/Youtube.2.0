@@ -22,6 +22,10 @@ if($response){
         $id_user = $_GET['id'];
         $give_user = $connect->query("SELECT * FROM `output_videos` WHERE `id_user` = '$id_user'");
         $user = $give_user->fetch(PDO::FETCH_ASSOC);
+
+        if($_GET['id'] == $_SESSION['user']['id']){
+            header("Location: ../output/myvideos.php");
+        } 
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -33,7 +37,7 @@ if($response){
     <title>Профиль <?=$user['name_user']?></title>
 </head>
 <header>
-    <a href=""><img src="../pictures/лого.png" class="logo" alt=""></a>
+    <a href="../output/index.php"><img src="../pictures/лого.png" class="logo" alt=""></a>
 </header>
 <body>
 <div class="line-right">
