@@ -21,6 +21,7 @@ if($response){
         require_once('../functions/connect.php');
         $id = $_GET['id'];
         $give_video = $connect->query("SELECT * FROM `output_videos` WHERE `id` = '$id'");
+
         $video = $give_video->fetch(PDO::FETCH_ASSOC);
 ?>
 <!DOCTYPE html>
@@ -118,9 +119,11 @@ if($response){
             while($comm = $output_comm->fetch(PDO::FETCH_ASSOC)){
                 ?>                
         <div class="comment">
-                <img src="<?='../' . $comm['avatar_user']?>" width="60" height="60" style="border-radius: 30px;" alt="">
-                <p><?=$comm['name_user']?></p>
-                <?=$comm['comment']?>
+        <a href="../output/check_user.php?id=<?php echo $video['id_user']?>"><img src="<?=$video['avatar_user']?>" alt=""></a>
+                <div>
+                    <p><?=$comm['name_user']?></p>
+                    <?=$comm['comment']?>
+                </div>
         </div>
         <?php
             }

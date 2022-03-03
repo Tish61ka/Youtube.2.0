@@ -15,7 +15,7 @@ if(!$_SESSION['admin']){
     <title>Профиль администратора</title>
 </head>
 <header>
-    <a href=""><img src="../pictures/лого.png" class="logo" alt=""></a>
+    <a href="/output\index.php"><img src="../pictures/лого.png" class="logo" alt=""></a>
 </header>
 <body>
 <div class="line-right">
@@ -68,7 +68,7 @@ if(!$_SESSION['admin']){
                             ?>" controls>                           
                             </video>
                             <img src="<?='../' . $row['avatar_user']?>" height="40" width="40" style="border-radius: 50px;" alt="">
-                            <h1><?=$row['name_video']?></h2> 
+                            <h1><?=$row['name_video']?></h1> 
                             <h2><?=$row['name_user']?></h2> 
                             <h3>Описание: <br><?=$row['discription']?></h2>
                             <p class="p"><?=$row['date']?></p>

@@ -15,7 +15,7 @@ if(!$_SESSION['admin']){
     <title>Профиль администратора</title>
 </head>
 <header>
-    <a href="index.php"><img src="../pictures/лого.png" class="logo" alt=""></a>
+    <a href="/output\index.php"><img src="../pictures/лого.png" class="logo" alt=""></a>
 </header>
 <body>
 <div class="line-right">
@@ -71,6 +71,7 @@ if(!$_SESSION['admin']){
                             <img src="<?='../' . $row['avatar_user']?>" height="40" width="40" style="border-radius: 50px;" alt="">
                             <h1><?=$row['name_video']?></h2> 
                             <h2><?=$row['name_user']?></h2> 
+                            <p class="p"><?=$row['date']?></p>
                             <h3>Описание: <br><?=$row['discription']?></h2>
                             <?php 
                                 if ($_SESSION['message']){
@@ -78,7 +79,6 @@ if(!$_SESSION['admin']){
                                 }
                                 unset($_SESSION['message']);
                             ?> 
-                            <p class="p"><?=$row['date']?></p>
                             <a href="../functions/delete_video.php?id=<?php echo $row['id']?>">Удалить видео</a>
                             <a href="../functions/ban_video.php?id=<?php echo $row['id']?>">Забанить видео</a>
                             <a href="../functions/unban_video.php?id=<?php echo $row['id']?>">Разбанить видео</a>                          

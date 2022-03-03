@@ -15,7 +15,7 @@ if(!$_SESSION['admin']){
     <title>Профиль администратора</title>
 </head>
 <header>
-    <a href=""><img src="../pictures/лого.png" class="logo" alt=""></a>
+    <a href="/output\index.php"><img src="../pictures/лого.png" class="logo" alt=""></a>
 </header>
 <body>
 <div class="line-right">
@@ -58,7 +58,7 @@ if(!$_SESSION['admin']){
                                 <td>Роль: <?=$row['role']?></td>
                                 <td>Бан: <?=$row['ban'] ,' '?></td>
                                 <td class="btn"><a href="../functions/delete_user.php?id=<?php echo $row['id']?>">Delete</a></td>
-                                <td class="btn"><a href="../functions/ban_user.php?id=<?php echo $row['id']?>">Ban</a></td>
+                                <td class="btn2"><a href="../functions/ban_user.php?id=<?php echo $row['id']?>">Ban</a></td>
                                 <td class="btn1"><a href="../functions/unban_user.php?id=<?php echo $row['id']?>">Unban</a></td>
                             </tr>
 

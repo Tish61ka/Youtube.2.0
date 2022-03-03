@@ -133,36 +133,38 @@ ul{
   width: 110%;
 }
 .video h1{
-  position: absolute;
-  font-size: 16px;
-  color: white;
-  top: 55vh;
-  margin-left: 50px;
-}
-.video h2{
-  position: absolute;
-  font-size: 16px;
-  top: 57vh;
-  margin-left: 50px;
-}
-.video h3{
-    font-size: 17px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    width: 450px;
+    position: relative;
+    font-size: 16px;
+    color: white;
+    top: -5vh;
+    margin-left: 50px;
+  }
+  .video h2{
+    position: relative;
+    font-size: 16px;
+    top: -5vh;
+    margin-left: 50px;
+  }
+  .video h3{
+      font-size: 17px;
+      margin-top: -30px;
+      margin-bottom: -20px;
+      color: white;
+      width: 450px;
+      min-height: 40px;
+    }
+  .video .p{
+    position: relative;
+    font-size: 16px;
+    top: -10vh;
+    margin-left: 360px;
+    color: white;
   }
 .message{
-    position: absolute;
+    position: relative;
     font-size: 16px;
     margin-left: 310px;
-    top: 57vh;
-}
-.video .p{
-  position: absolute;
-  font-size: 16px;
-  top: 55vh;
-  margin-left: 360px;
-  color: white;
+    top: -9vh;
 }
 .container{
     display: flex;
@@ -171,6 +173,7 @@ ul{
     min-width: 500px;
     max-width: 1100px;
     margin-left: 400px;
+    margin-bottom: 50px;
 }
 .my{
     width: 450px;

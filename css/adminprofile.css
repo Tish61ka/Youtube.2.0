@@ -116,6 +116,12 @@ td{
 .btn1:hover{
     border-bottom: 1px solid greenyellow;
 }
+.btn2 a{
+    color: white;
+}
+.btn2:hover{
+    border-bottom: 1px solid orange;
+}
 
 /* Style form */
 form{
