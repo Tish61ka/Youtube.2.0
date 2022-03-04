@@ -81,7 +81,7 @@ if($response){
                     <input type="file" name="video" class="button_file" id="a" required accept=".mkv, .mp4"> 
                     <button class="button_file_2">Загрузите видео</button>
                 </div>
-                <input type="file" name="prewiew" class="prewiew" accept="image/*">
+                <input type="file" name="prewiew" class="prewiew" accept="image/*" required>
                 <div class="download_prewiew">
                 <svg class="svg_download" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
                     width="60" height="60"
