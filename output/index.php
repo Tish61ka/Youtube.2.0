@@ -114,7 +114,7 @@ if($response){
     <footer>
         <ul>
             <li>GWPU Corporation</li>
-            <li>ⓒ 2022 Company, Corp-<a href="/output\policy.html">Privacy</a></li>
+            <li>ⓒ 2022 Company, Corp-<a href="/output\policy2.html">Privacy</a></li>
         </ul>
         <ul class="next_ul_footer">
             <li>Есть вопросы?</li>
