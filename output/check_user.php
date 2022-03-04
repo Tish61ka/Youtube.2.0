@@ -17,7 +17,6 @@ if($response){
         }
     }
 }
-
         require_once('../functions/connect.php');
         $id_user = $_GET['id'];
         $give_user = $connect->query("SELECT * FROM `output_videos` WHERE `id_user` = '$id_user'");
@@ -44,7 +43,7 @@ if($response){
 <div class="icon">
     <div class="crop">
                 <a href="#" >
-                    <img src="<?=$user['avatar_user']?>" alt="">
+                    <img src="<?='../' . $user['avatar_user']?>" alt="">
                 </a>
             </div>
         <p><?=$user['name_user']?></p>

@@ -150,7 +150,17 @@ if($response){
         <div class="comment">
         <a href="../output/check_user.php?id=<?php echo $comm['id_user']?>"><img src="<?='../' . $comm['avatar_user']?>" alt=""></a>
                 <div>
-                    <p><?=$comm['name_user']?></p>
+                    <p><?php
+                        if($comm['id_user'] == $video['id_user']){
+                            ?>
+                                <?=$comm['name_user']?> <span style="color: red;">Автор</span>
+                            <?
+                        } else{
+                            ?>
+                                <?=$comm['name_user']?>
+                            <?
+                        }
+                    ?></p>
                     <?=$comm['comment']?>
                 </div>
         </div>

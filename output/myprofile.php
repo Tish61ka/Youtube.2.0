@@ -25,7 +25,7 @@ if($response){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/myprofile.css">
-    <title>Профиль</title>
+    <title>Профиль <?=$_SESSION['user']['nick_name']?></title>
 </head>
 <header>
     <a href="index.php"><img src="../pictures/лого.png" class="logo" alt=""></a>
