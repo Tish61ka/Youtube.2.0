@@ -95,9 +95,9 @@ if($response){
         <h1><?=$video['name_video']?></h1>
         <h2><?=$video['name_user']?></h2>
         <p>Дата публикации видео:<?=' ', $video['date']?></p>
-        <form class="form_like" action="../functions/like_plus.php" method="POST">
+        <form class="form_like">
         <textarea id="like" name="like_plus" id="" cols="3" rows="1"></textarea>
-        <button type="submit" id="qu" onclick="likeplus();  document.getElementById('qu').style.zIndex = '0';document.getElementById('qu1').style.zIndex = '3'; document.getElementById('close1').style.zIndex = '0'; document.getElementById('close').style.zIndex = '3'; document.getElementById('qu').style.opacity = '0';document.getElementById('qu1').style.opacity = '1'; document.getElementById('close1').style.opacity = '0'; document.getElementById('close').style.opacity = '1'">
+        <button id="qu" onclick="likeplus(); event.preventDefault(); document.getElementById('qu').style.zIndex = '0';document.getElementById('qu1').style.zIndex = '3'; document.getElementById('close1').style.zIndex = '0'; document.getElementById('close').style.zIndex = '3'; document.getElementById('qu').style.opacity = '0';document.getElementById('qu1').style.opacity = '1'; document.getElementById('close1').style.opacity = '0'; document.getElementById('close').style.opacity = '1'">
         <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
             width="36" height="36"
             viewBox="0 0 172 172"
