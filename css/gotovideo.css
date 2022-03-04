@@ -226,6 +226,54 @@ video{
     font-size: 16px;
     color: white;
 }
+.form_like{
+    width: 150px;
+    position: relative;
+    left: 75%;
+    margin-top: -2%;
+    display: flex;
+    flex-direction: row;
+}
+.form_like textarea{
+    margin-left: -20px;
+    background: transparent;
+    border: none;
+    color: white;
+}
+#qu{
+    display: block;
+    z-index: 3;
+    background: transparent;
+    border: none;
+}
+#qu1{
+    position: relative;
+    z-index: 0;
+    left: -35px;
+    background: transparent;
+    border: none;
+    opacity: 0;
+}
+#close{
+    display: block;
+    z-index: 3;
+    background: transparent;
+    border: none;
+    opacity: 1;
+}
+#close1{
+    position: relative;
+    z-index: 0;
+    left: -35px;
+    background: transparent;
+    border: none;
+    opacity: 0;
+}
+button:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: 300ms;
+}
 /*close info_under_video*/
 
 .line{

@@ -95,6 +95,33 @@ if($response){
         <h1><?=$video['name_video']?></h1>
         <h2><?=$video['name_user']?></h2>
         <p>Дата публикации видео:<?=' ', $video['date']?></p>
+        <form class="form_like" action="">
+        <textarea id="like" name="" id="" cols="3" rows="1"></textarea>
+        <button id="qu" onclick="likeplus(); event.preventDefault(); document.getElementById('qu').style.zIndex = '0';document.getElementById('qu1').style.zIndex = '3'; document.getElementById('close1').style.zIndex = '0'; document.getElementById('close').style.zIndex = '3'; document.getElementById('qu').style.opacity = '0';document.getElementById('qu1').style.opacity = '1'; document.getElementById('close1').style.opacity = '0'; document.getElementById('close').style.opacity = '1'">
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+            width="36" height="36"
+            viewBox="0 0 172 172"
+            style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#ba45f0"><path d="M86,162.71469l-2.20375,-1.8275c-4.17906,-3.49375 -9.83625,-7.28312 -16.39375,-11.66375c-25.54469,-17.10594 -60.5225,-40.51406 -60.5225,-80.42344c0,-24.65781 20.06219,-44.72 44.72,-44.72c13.39719,0 25.94781,5.96625 34.4,16.16531c8.45219,-10.19906 21.00281,-16.16531 34.4,-16.16531c24.65781,0 44.72,20.06219 44.72,44.72c0,39.90938 -34.97781,63.3175 -60.5225,80.42344c-6.5575,4.38063 -12.21469,8.17 -16.39375,11.66375z"></path></g></g></svg></button>
+        <button id="qu1" onclick="likeminus(); event.preventDefault();document.getElementById('qu1').style.zIndex = '0';document.getElementById('qu').style.zIndex = '3'; document.getElementById('close1').style.zIndex = '0'; document.getElementById('close').style.zIndex = '3';   ;document.getElementById('qu1').style.opacity = '0';document.getElementById('qu').style.opacity = '1'; document.getElementById('close1').style.opacity = '0'; document.getElementById('close').style.opacity = '1'">
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+            width="36" height="36"
+            viewBox="0 0 172 172"
+            style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#ff0000"><path d="M86,162.71469l-2.20375,-1.8275c-4.17906,-3.49375 -9.83625,-7.28312 -16.39375,-11.66375c-25.54469,-17.10594 -60.5225,-40.51406 -60.5225,-80.42344c0,-24.65781 20.06219,-44.72 44.72,-44.72c13.39719,0 25.94781,5.96625 34.4,16.16531c8.45219,-10.19906 21.00281,-16.16531 34.4,-16.16531c24.65781,0 44.72,20.06219 44.72,44.72c0,39.90938 -34.97781,63.3175 -60.5225,80.42344c-6.5575,4.38063 -12.21469,8.17 -16.39375,11.66375z"></path></g></g></svg></button>
+        <textarea id="dislike" name="" id="" cols="3" rows="1"></textarea>
+        <button id="close" onclick="dislikeplus(); event.preventDefault(); document.getElementById('qu1').style.zIndex = '0'; document.getElementById('qu').style.zIndex = '3'; document.getElementById('close').style.zIndex = '0'; document.getElementById('close1').style.zIndex = '3';  document.getElementById('qu1').style.opacity = '0'; document.getElementById('qu').style.opacity = '1'; document.getElementById('close').style.opacity = '0'; document.getElementById('close1').style.opacity = '1'">
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+            width="36" height="36"
+            viewBox="0 0 172 172"
+            style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#ba45f0"><path d="M120.4,24.08c-6.59781,0 -12.85969,1.42438 -18.705,4.07156l-5.375,23.44844h12.72531l-12.37594,30.96h8.93594l-28.20531,45.40531l8.6,-38.52531h-11.35469l10.66937,-30.96h-14.44531l5.17344,-27.06312c-7.05469,-4.78375 -15.45313,-7.33688 -24.44281,-7.33688c-24.65781,0 -44.72,20.06219 -44.72,44.72c0,39.90938 34.97781,63.3175 60.5225,80.42344c6.5575,4.38063 12.21469,8.17 16.39375,11.66375c0.645,0.52406 1.42438,0.79281 2.20375,0.79281c0.77938,0 1.55875,-0.26875 2.20375,-0.79281c4.1925,-3.49375 9.83625,-7.26969 16.39375,-11.66375c25.54469,-17.10594 60.5225,-40.51406 60.5225,-80.42344c0,-24.65781 -20.06219,-44.72 -44.72,-44.72z"></path></g></g></svg>
+        
+        </button>
+        <button id="close1" onclick="dislikeminus(); event.preventDefault(); document.getElementById('qu1').style.zIndex = '0'; document.getElementById('qu').style.zIndex = '3'; document.getElementById('close1').style.zIndex = '0'; document.getElementById('close').style.zIndex = '3';  document.getElementById('qu1').style.opacity = '0'; document.getElementById('qu').style.opacity = '1'; document.getElementById('close1').style.opacity = '0'; document.getElementById('close').style.opacity = '1'">
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+            width="36" height="36"
+            viewBox="0 0 172 172"
+            style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="red"><path d="M120.4,24.08c-6.59781,0 -12.85969,1.42438 -18.705,4.07156l-5.375,23.44844h12.72531l-12.37594,30.96h8.93594l-28.20531,45.40531l8.6,-38.52531h-11.35469l10.66937,-30.96h-14.44531l5.17344,-27.06312c-7.05469,-4.78375 -15.45313,-7.33688 -24.44281,-7.33688c-24.65781,0 -44.72,20.06219 -44.72,44.72c0,39.90938 34.97781,63.3175 60.5225,80.42344c6.5575,4.38063 12.21469,8.17 16.39375,11.66375c0.645,0.52406 1.42438,0.79281 2.20375,0.79281c0.77938,0 1.55875,-0.26875 2.20375,-0.79281c4.1925,-3.49375 9.83625,-7.26969 16.39375,-11.66375c25.54469,-17.10594 60.5225,-40.51406 60.5225,-80.42344c0,-24.65781 -20.06219,-44.72 -44.72,-44.72z"></path></g></g></svg>
+        </button>
+    </form>
     </section>
     <div class="line"></div>
     <section class="description">
@@ -161,6 +188,7 @@ if($response){
         </div>
         <img src="/pictures/qr.jpg" alt="">
         </footer>
+        <script src="/js\like.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
         <script src="../js/script.js"></script> 
         <script src="/js/slider.js"></script> 
