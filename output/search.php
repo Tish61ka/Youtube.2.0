@@ -20,8 +20,7 @@
 
     $search = $_GET['search'];
 
-    $sql = $connect->query("SELECT * FROM `output_videos` WHERE `name_video` = '$search'");
-    $res = $sql->fetch(PDO::FETCH_ASSOC);
+    $sql = $connect->query("SELECT * FROM `output_videos` WHERE `name_video` LIKE '%$search%'");
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -39,9 +38,10 @@
     <h1 class="result">Результаты по запросу: "<?=$search?>"</h1>
 <div class="container">
     <?php
-        if($res == 0){
+        while($res = $sql->fetch(PDO::FETCH_ASSOC)){   
+        if($res < 0){
             echo "По вашему запросу $search ничего не найдено!";
-        } else{
+        } else{         
             ?>
             <div class="video">
                  <a href="../output/go_to_video.php?id=<?echo $res['id']?>"><video src="
@@ -69,6 +69,7 @@
     <h2><?=$res['name_user']?></h2>
             </div>
             <?
+            }
         }
     ?>
     </div>
