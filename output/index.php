@@ -41,7 +41,7 @@ if($response){
                 </ul>
             </nav>   
             <a class="logo1" href="index.html"><img src="/pictures/лого.png" class="logo" alt=""></a>   
-            <form method="POST" action="search.php">
+            <form method="GET" action="../functions/search.php">
                 <input class="input" type="text" name="search" required placeholder="Искать здесь...">
                 <button class="button" type="submit" name="search_btn"><img src="https://img.icons8.com/ios-glyphs/30/000000/search--v1.png"/></button>
             </form>
