@@ -18,8 +18,6 @@
         }
     }
 
-    require_once('./connect.php');
-
     $search = $_GET['search'];
 
     $sql = $connect->query("SELECT * FROM `output_videos` WHERE `name_video` = '$search'");
