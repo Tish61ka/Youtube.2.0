@@ -88,7 +88,11 @@ header{
     transition: 300ms;
 }
 /* close menu left*/
-
+.error{
+    margin-left: 5vw;
+    margin-top: 5vw;
+    font-size: 2vw;
+}
 /* Style videos*/
 .container{
     display: flex;

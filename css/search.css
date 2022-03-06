@@ -86,3 +86,7 @@ header{
     font-size: 20px;
     color: #ba45f0;
 }
+.error{
+    margin-left: 5vw;
+    font-size: 2vw;
+}

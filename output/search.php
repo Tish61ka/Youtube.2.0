@@ -20,7 +20,8 @@
 
     $search = $_GET['search'];
 
-    $sql = $connect->query("SELECT * FROM `output_videos` WHERE `name_video` LIKE '%$search%'");
+    $sql = $connect->query("SELECT * FROM `output_videos` WHERE `name_video` LIKE '%$search%' OR `name_user` LIKE '%$search%'");
+    $int = 0;
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -29,19 +30,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/search.css">
-    <title>Поиск <?=$search?></title>
+    <title><?=$search?></title>
 </head>
 <header>
     <a href="/output\index.php"><img src="../pictures/лого.png" class="logo" alt=""></a>
 </header>
 <body>
-    <h1 class="result">Результаты по запросу: "<?=$search?>"</h1>
+    <h1 class="result">Результаты по запросу: '<?=$search?>'</h1>
 <div class="container">
     <?php
-        while($res = $sql->fetch(PDO::FETCH_ASSOC)){   
-        if($res < 0){
-            echo "По вашему запросу $search ничего не найдено!";
-        } else{         
+        while($res = $sql->fetch(PDO::FETCH_ASSOC)){
+            $int += 1;
             ?>
             <div class="video">
                  <a href="../output/go_to_video.php?id=<?echo $res['id']?>"><video src="
@@ -70,6 +69,8 @@
             </div>
             <?
             }
+        if($int == 0){
+            echo '<p class="error">' . "По вашему запросу '$search' ничего не найдено!" . '</p>';
         }
     ?>
     </div>

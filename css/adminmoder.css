@@ -170,6 +170,11 @@ header{
     border-radius: 10px;
     margin-bottom: 15px;
 }
+.error{
+    margin-left: 5vw;
+    margin-top: 5vw;
+    font-size: 2vw;
+}
 /* Close style videos */
 .logout{
     position: absolute;

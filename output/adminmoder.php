@@ -1,9 +1,10 @@
 <?php
 session_start();
 if(!$_SESSION['admin']){
-    session_unset($_SESSION['admin']);
+    unset($_SESSION['admin']);
     header('Location: singin.php');
 }
+$int = 0;
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -48,6 +49,7 @@ if(!$_SESSION['admin']){
                     $result = $connect->prepare("SELECT * FROM `videos`");
                     $result->execute();
                     while($row = $result->fetch(PDO::FETCH_ASSOC)){
+                        $int += 1;
                         ?>
                         <div class="video">
                             <video class="my" src="<?php 
@@ -76,6 +78,9 @@ if(!$_SESSION['admin']){
                             <a href="../functions/delete_video_moder.php?id=<?php echo $row['id']?>">Отклонить видео</a>     
                         </div>
                         <?php
+                    }
+                    if($int == 0){
+                        echo '<p class="error">' . "Видео пока нет!" . '</p>';
                     }
                 ?>
             </div>

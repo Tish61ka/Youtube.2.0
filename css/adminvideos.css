@@ -186,7 +186,11 @@ ul{
     align-items: center;
     justify-content: space-between;
 }
- 
+.error{
+    margin-left: 5vw;
+    margin-top: 5vw;
+    font-size: 2vw;
+}
 /* Close style form*/
 
 .logout{

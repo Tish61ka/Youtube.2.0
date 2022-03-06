@@ -17,6 +17,7 @@ if($response){
         }
     }
 }
+$int = 0;
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -77,6 +78,7 @@ if($response){
                 $result = $connect->prepare("SELECT * FROM `output_videos`");
                 $result->execute();
                 while($row = $result->fetch(PDO::FETCH_ASSOC)){
+                    $int += 1;
                     ?>
                             <div class="video">
                     <a href="../output/go_to_video.php?id=<?echo $row['id']?>"><video class="my" src="<?php 
@@ -107,6 +109,9 @@ if($response){
                     </div>
                     </div>
                 <?php
+                }
+                if($int == 0){                    
+                    echo '<p class="error">' . "Видео пока нет!" . '</p>';
                 }
             ?>
         </div>

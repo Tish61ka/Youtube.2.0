@@ -1,9 +1,10 @@
 <?php
 session_start();
 if(!$_SESSION['admin']){
-    session_unset($_SESSION['admin']);
+    unset($_SESSION['admin']);
     header('Location: singin.php');
 }
+$int = 0;
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -49,6 +50,7 @@ if(!$_SESSION['admin']){
                     $result->execute();
                     // $check = $result->fetch(PDO::FETCH_ASSOC);
                     while($row = $result->fetch(PDO::FETCH_ASSOC)){
+                        $int += 1;
                         ?>
                         <div class="video">
                             <video class="my" src="<?php 
@@ -84,6 +86,9 @@ if(!$_SESSION['admin']){
                             <a href="../functions/unban_video.php?id=<?php echo $row['id']?>">Разбанить видео</a>                          
                         </div>
                         <?php
+                    }
+                    if($int == 0){
+                        echo '<p class="error">' . "Видео пока нет!" . '</p>';
                     }
                 ?>
             </div>
