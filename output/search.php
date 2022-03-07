@@ -20,7 +20,7 @@
 
     $search = $_GET['search'];
 
-    $sql = $connect->query("SELECT * FROM `output_videos` WHERE `name_video` LIKE '%$search%' OR `name_user` LIKE '%$search%'");
+    $sql = $connect->query("SELECT * FROM `output_videos` WHERE `name_video` LIKE '%$search%' OR `name_user` LIKE '%$search%' OR `category` LIKE '%$search%'");
     $int = 0;
 ?>
 <!DOCTYPE html>
@@ -34,6 +34,10 @@
 </head>
 <header>
     <a href="/output\index.php"><img src="../pictures/лого.png" class="logo" alt=""></a>
+    <form method="GET" action="./search.php">
+        <input class="input" type="text" name="search" required placeholder="Искать здесь...">
+        <button class="button" type="submit" name="search_btn"><img src="https://img.icons8.com/ios-glyphs/30/000000/search--v1.png"/></button>
+    </form>
 </header>
 <body>
     <h1 class="result">Результаты по запросу: '<?=$search?>'</h1>

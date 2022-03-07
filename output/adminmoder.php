@@ -74,6 +74,7 @@ $int = 0;
                             <h2><?=$row['name_user']?></h2> 
                             <h3>Описание: <br><?=$row['discription']?></h2>
                             <p class="p"><?=$row['date']?></p>
+                            <h3 class="category">Категория: <?=$row['category']?></h3>
                             <a href="../functions/output_video.php?id=<?php echo $row['id']?>">Принять видео</a>  
                             <a href="../functions/delete_video_moder.php?id=<?php echo $row['id']?>">Отклонить видео</a>     
                         </div>

@@ -74,6 +74,7 @@ $int = 0;
                             <h1><?=$row['name_video']?></h2> 
                             <h2><?=$row['name_user']?></h2> 
                             <p class="p"><?=$row['date']?></p>
+                            <h3 class="category">Категория: <?=$row['category']?></h3>
                             <h3>Описание: <br><?=$row['discription']?></h2>
                             <?php 
                                 if ($_SESSION['message']){

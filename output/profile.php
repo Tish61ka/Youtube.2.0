@@ -80,6 +80,12 @@ if($response){
                     <div>
                     <input type="file" name="video" class="button_file" id="a" required accept=".mkv, .mp4"> 
                     <button class="button_file_2">Загрузите видео</button>
+                    <select name="category" id="">
+                        <option>Выберите категорию видео</option>
+                        <option value="Dota 2">Dota 2</option>
+                        <option value="PUBG">PUBG</option>
+                        <option value="CSGO">CS:GO</option>
+                    </select>
                 </div>
                 <input type="file" name="prewiew" class="prewiew" accept="image/*" required>
                 <div class="download_prewiew">

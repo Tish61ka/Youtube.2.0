@@ -8,6 +8,7 @@
 
     $name_video = $_POST['name_video'];
     $discription = $_POST['discription'];
+    $category = $_POST['category'];
     $id_user = $_SESSION['user']['id'];
     $name_user = $_SESSION['user']['nick_name'];
     $avatar_user = "../" . $_SESSION['user']['avatar'];
@@ -18,7 +19,7 @@
     $prewiew = 'prewiew/' . time() . $_FILES['prewiew']['name'];
     move_uploaded_file($_FILES['prewiew']['tmp_name'], '../' . $prewiew);
 
-    $add_video = $connect->prepare("INSERT INTO `videos`(`id`, `video`, `name_video`, `discription`, `id_user`, `name_user`,`avatar_user`,`prewiew`) VALUES (NULL,'$video','$name_video','$discription','$id_user','$name_user','$avatar_user', '$prewiew')");
+    $add_video = $connect->prepare("INSERT INTO `videos`(`id`, `video`, `name_video`, `discription`, `id_user`, `name_user`,`avatar_user`,`prewiew`,`category`) VALUES (NULL,'$video','$name_video','$discription','$id_user','$name_user','$avatar_user', '$prewiew','$category')");
     $add_video->execute();
     header('Location: ../output/profile.php');
 

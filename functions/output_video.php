@@ -18,8 +18,9 @@
     $avatar_user = $add_video['avatar_user'];
     $prewiew = $add_video['prewiew'];
     $ban = $add_video['ban'];
+    $category = $add_video['category'];
 
-    $add = $connect->query("INSERT INTO `output_videos` (`id`, `video`, `name_video`, `discription`, `id_user`, `name_user`, `avatar_user`, `prewiew`, `ban`) VALUES ('$id_v','$video','$name_video','$discription','$id_user','$name_user','$avatar_user','$prewiew','$ban')");
+    $add = $connect->query("INSERT INTO `output_videos` (`id`, `video`, `name_video`, `discription`, `id_user`, `name_user`, `avatar_user`, `prewiew`, `ban`, `category`) VALUES ('$id_v','$video','$name_video','$discription','$id_user','$name_user','$avatar_user','$prewiew','$ban','$category')");
 
     $delete_user = $connect->prepare("DELETE FROM `videos` WHERE `id` = '$id'");
     $delete_user->execute();

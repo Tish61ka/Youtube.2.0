@@ -191,6 +191,9 @@ ul{
     margin-top: 5vw;
     font-size: 2vw;
 }
+.category{
+    position: absolute;
+}
 /* Close style form*/
 
 .logout{

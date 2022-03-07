@@ -175,6 +175,9 @@ header{
     margin-top: 5vw;
     font-size: 2vw;
 }
+.category{
+    position: absolute;
+}
 /* Close style videos */
 .logout{
     position: absolute;
