@@ -463,3 +463,8 @@ footer img{
     border: 2px solid #ba45f0;
 }
 /*close FOOTER*/
+
+.error{
+    margin-left: 35vw;
+    font-size: 2vw;
+}

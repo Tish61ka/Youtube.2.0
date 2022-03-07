@@ -70,7 +70,8 @@ if(!$_SESSION['admin']){
             <?php
                 require_once('../functions/connect.php');
                 $output_comm = $connect->query("SELECT * FROM `comments`");
-                while($comm = $output_comm->fetch(PDO::FETCH_ASSOC)){                
+                while($comm = $output_comm->fetch(PDO::FETCH_ASSOC)){   
+                    $int += 1;           
                     ?>
                     <tr>
                         <td>ID Коментария: <?=$comm['id']?></td>
@@ -80,6 +81,9 @@ if(!$_SESSION['admin']){
                         <td class="btn"><a href="../functions/delete_comment.php?id=<?php echo $comm['id'] ?>">Delete</a></td>
                     </tr>                    
                     <?php
+                }
+                if($int == 0){
+                    echo '<td class="error">' . "Коментариев пока нет!" . '</td>';
                 }
             ?>
             </table> 

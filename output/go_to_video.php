@@ -23,6 +23,7 @@ if($response){
         $give_video = $connect->query("SELECT * FROM `output_videos` WHERE `id` = '$id'");
 
         $video = $give_video->fetch(PDO::FETCH_ASSOC);
+        $int = 0;
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -146,6 +147,7 @@ if($response){
             $id_video = $video['id'];
             $output_comm = $connect->query("SELECT * FROM `comments` WHERE `id_video` = '$id_video'");
             while($comm = $output_comm->fetch(PDO::FETCH_ASSOC)){
+                $int += 1;
                 ?>                
         <div class="comment">
         <a href="../output/check_user.php?id=<?php echo $comm['id_user']?>"><img src="<?='../' . $comm['avatar_user']?>" alt=""></a>
@@ -165,6 +167,9 @@ if($response){
                 </div>
         </div>
         <?php
+            }
+            if($int == 0){
+                echo '<p class="error">' . "Коментариев пока что нет!" . '</p>';
             }
         ?>
     </section>
