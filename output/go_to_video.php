@@ -135,7 +135,7 @@ if($response){
     <div class="line"></div>
     <section class="description">
         <h2>Описание</h2>
-        <p><?=$video['discription']?></p>
+        <pre><?=$video['discription']?></pre>
     </section>
     <img class="under_video" src="/pictures/pictureonfooter.png" alt="">
     <section class="comments">
@@ -144,7 +144,7 @@ if($response){
             <p class="counter"><span class="count">0</span>/300</p>
             <textarea name="comment" id="limitInput" onkeyup="countLetters();" cols="30" rows="5" placeholder="Напишите комментарий..." required maxlength="300"></textarea>
             <input type="hidden" name="id_video" value="<?php echo $video['id'] ?>">
-            <input type="text" id="sub" data-comment="<?php echo $_GET['comment'] ?>" value="Отправить">
+            <input type="submit"  value="Отправить">
         </form>
     </section>
     <img class="under_comment" src="/pictures/pictureonfooter.png" alt="">
@@ -170,7 +170,7 @@ if($response){
                             <?
                         }
                     ?></p>
-                    <?=$comm['comment']?>
+                    <pre><?=$comm['comment']?></pre>
                 </div>
         </div>
         <?php
