@@ -12,5 +12,3 @@ box.addEventListener("click", function() {
   box3.classList.add('box_animate_1');
   box6.classList.add('box_animate_2');
 });
-
-

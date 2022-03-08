@@ -468,3 +468,13 @@ footer img{
     margin-left: 35vw;
     font-size: 2vw;
 }
+.test button{
+    color: white;
+    background: rgb(186, 69, 240);
+    padding: 10px;
+    margin-left: 80vw;
+    z-index: 5;
+}
+.test p{
+    margin-top: -2vw;
+}
