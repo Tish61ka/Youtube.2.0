@@ -300,7 +300,7 @@ button:hover{
     margin-top: 10px;
     font-size: 22px;
 }
-.description p{
+.description pre{
     width: 100%;
     min-height: 10vh;
     color: white;
