@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function(event) {
 	$('.menu-burger__header').click(function(){
         $('.menu-burger__header').toggleClass('open-menu');
         $('.header__nav').toggleClass('open-menu');

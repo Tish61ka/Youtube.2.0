@@ -2,7 +2,7 @@
     $host = 'localhost';
     $dbname = 'videohost';
     $username = 'root';
-    $password = 'root';
+    $password = '';
 
     try{
         $connect = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);

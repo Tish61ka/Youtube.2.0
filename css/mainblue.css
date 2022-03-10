@@ -11,7 +11,7 @@
 }
 body{
     background-color: #2a2827;
-    color: #ba45f0;
+    color: #05d9e8;
 }
 
 /* HEADER */
@@ -19,7 +19,7 @@ header{
     height: 17vh;
     display: flex;
     flex-direction: row;
-    border-bottom: 1px solid #ba45f0;
+    border-bottom: 1px solid #05d9e8;
 }
 .logo1{
     position: relative;
@@ -48,7 +48,7 @@ form{
     width: 35vw;
     height: 42px;
     padding-left: 10px;
-    border: 2px solid #ba45f0;
+    border: 2px solid #05d9e8;
     border-radius: 5px;
     outline: none;
     background: #2a2827;
@@ -64,7 +64,7 @@ form .button{
     width: 42px;
     height: 42px;
     border: none;
-    background: #ba45f0;
+    background: #05d9e8;
     border-radius: 0 5px 5px 0;
     cursor: pointer;
 }
@@ -103,8 +103,8 @@ form .button img{
 }
 .header__menu {
 	display: block;
-    border-top: 1px #ba45f0 solid;
-    border-bottom: 1px #ba45f0 solid;
+    border-top: 1px #05d9e8 solid;
+    border-bottom: 1px #05d9e8 solid;
     height: 120vh;
     max-height: 250vh;
 }
@@ -114,13 +114,13 @@ form .button img{
 .header__menu li {
 	list-style: none;
 	margin: 45px 0px 0px 26px;
-	color: #ba45f0;
+	color: #05d9e8;
 	font-size: 16px;
 	text-transform: uppercase;
 	text-decoration: none;
 	}
     .menu__item{
-        color: #ba45f0;
+        color: #05d9e8;
     }
 .menu-burger__header {
 	position: relative;
@@ -175,119 +175,115 @@ form .button img{
     list-style: none;
     display: none;
   }
-
-  .menu__item .title {
+.menu__item .title {
     font-size: 16px;
     cursor: pointer;
   }
   .open ul {
     display: block;
     width: 100%;
-    position: relative;
-    z-index: 3;
   }
   .open ul li{
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-  }
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
   .blue{
-      position: relative;
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      background: #05d9e8;
-      box-shadow: 0px 0px 6px 3px #05d9e8;
-      z-index: 4;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #05d9e8;
+    box-shadow: 0px 0px 6px 3px #05d9e8;
+    z-index: 4;
+}
+.blue:hover{
+    cursor: pointer;
+    animation: phon 2s ease-in-out infinite;
+}
+@keyframes phon {
+       from{
+          box-shadow: 0px 0px 10px 5px #05d9e8;
+       } 
+       50%{
+          box-shadow: 0px 0px 6px 3px #05d9e8;
+       }
+       to{
+          box-shadow: 0px 0px 10px 5px #05d9e8;
+       }
   }
-  .blue:hover{
-      cursor: pointer;
-      animation: phon 2s ease-in-out infinite;
-  }
-  @keyframes phon {
-         from{
-            box-shadow: 0px 0px 6px 3px #05d9e8;
-         } 
-         50%{
-            box-shadow: 0px 0px 10px 5px #05d9e8;
-         }
-         to{
-            box-shadow: 0px 0px 6px 3px #05d9e8;
-         }
-    }
-    .purple{
-        position: relative;
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        background: #ba45f0;
+  .purple{
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #ba45f0;
+    box-shadow: 0px 0px 6px 3px #ba45f0;
+    z-index: 4;
+}
+.purple:hover{
+    cursor: pointer;
+    animation: phon1 2s ease-in-out infinite;
+}
+@keyframes phon1 {
+       from{
+         box-shadow: 0px 0px 6px 3px #ba45f0;
+       } 
+       50%{
+        box-shadow: 0px 0px 10px 5px #ba45f0;
+       }
+       to{
         box-shadow: 0px 0px 6px 3px #ba45f0;
-        z-index: 4;
-    }
-    .purple:hover{
-        cursor: pointer;
-        animation: phon1 2s ease-in-out infinite;
-    }
-    @keyframes phon1 {
-           from{
-             box-shadow: 0px 0px 6px 3px #ba45f0;
-           } 
-           50%{
-            box-shadow: 0px 0px 10px 5px #ba45f0;
-           }
-           to{
-            box-shadow: 0px 0px 6px 3px #ba45f0;
-           }
-      }
-      .yellow{
-        position: relative;
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        background: #faed27;
-        box-shadow: 0px 0px 6px 3px #faed27;
-        z-index: 4;
-    }
-    .yellow:hover{
-        cursor: pointer;
-        animation: phon2 2s ease-in-out infinite;
-    }
-    @keyframes phon2 {
-           from{
-              box-shadow: 0px 0px 6px 3px #faed27;
-           } 
-           50%{
-              box-shadow: 0px 0px 10px 5px #faed27;
-           }
-           to{
-              box-shadow: 0px 0px 6px 3px #faed27;
-           }
-      }
-      .pink{
-        position: relative;
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        background: #fe019a;
-        box-shadow: 0px 0px 6px 3px #fe019a;
-        z-index: 4;
-    }
-    .pink:hover{
-        cursor: pointer;
-        animation: phon3 2s ease-in-out infinite;
-    }
-    @keyframes phon3 {
-           from{
-              box-shadow: 0px 0px 6px 3px #fe019a;
-           } 
-           50%{
-              box-shadow: 0px 0px 10px 5px #fe019a;
-           }
-           to{
-              box-shadow: 0px 0px 6px 3px #fe019a;
-           }
-      }
-
+       }
+  }
+  .yellow{
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #faed27;
+    box-shadow: 0px 0px 6px 3px #faed27;
+    z-index: 4;
+}
+.yellow:hover{
+    cursor: pointer;
+    animation: phon2 2s ease-in-out infinite;
+}
+@keyframes phon2 {
+       from{
+          box-shadow: 0px 0px 6px 3px #faed27;
+       } 
+       50%{
+          box-shadow: 0px 0px 10px 5px #faed27;
+       }
+       to{
+          box-shadow: 0px 0px 6px 3px #faed27;
+       }
+  }
+  .pink{
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #fe019a;
+    box-shadow: 0px 0px 6px 3px #fe019a;
+    z-index: 4;
+}
+.pink:hover{
+    cursor: pointer;
+    animation: phon3 2s ease-in-out infinite;
+}
+@keyframes phon3 {
+       from{
+          box-shadow: 0px 0px 6px 3px #fe019a;
+       } 
+       50%{
+          box-shadow: 0px 0px 10px 5px #fe019a;
+       }
+       to{
+          box-shadow: 0px 0px 6px 3px #fe019a;
+       }
+  }
 /* Close Burger Menu */
 /* CLOSE HEADER */
 
@@ -306,7 +302,7 @@ div#carousel {
   }
   div#carousel h1{
       font-size: 22px;
-      color: #ba45f0;
+      color: #05d9e8;
       text-align: center;
   }
   figure#spinner { 
@@ -364,7 +360,7 @@ div#carousel {
     position: relative;
     margin-top: -50px;
     margin-bottom: 30px;
-    background-image: url(/pictures/Фон\ для\ блокa\ b.png);
+    background-image: url(/pictures/фондляблокаblue.png);
     background-size: cover;
     height: 120px;
     z-index: 2;
@@ -373,7 +369,7 @@ div#carousel {
 
 /* Video section */
 .video_section{
-    background-image: url(/pictures/background\ video1.png);
+    background-image: url(/pictures/background\ video1blue.png);
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -419,9 +415,9 @@ div#carousel {
 .info{
     width: 130vh;
     height: 27vh;
-    border: 1px solid #ba45f0;
+    border: 1px solid #05d9e8;
     margin: 50px auto;
-    box-shadow: 1px 1px 10px 5px #bc13fe; 
+    box-shadow: 1px 1px 10px 5px #05d9e8; 
     transition: 300ms;
 }
 .info h1{
@@ -565,7 +561,7 @@ div#carousel {
 .more_videos{
     width: 150vh;
     height: 25vh;
-    border: 1px solid #ba45f0;
+    border: 1px solid #05d9e8;
     margin: 50px auto;
     box-shadow: 1px 1px 10px 5px #bc13fe; 
     transition: 300ms;
@@ -649,7 +645,7 @@ footer ul li{
 }
 footer ul li a{
     font-size: 18px;
-    color: #ba45f0;
+    color: #05d9e8;
 }
 .next_ul_footer{
     width: 42vh;
@@ -677,7 +673,7 @@ footer img{
     width: 160px;
     height: 160px;
     border-radius: 50%;
-    border: 2px solid #ba45f0;
+    border: 2px solid #05d9e8;
 }
 /*close FOOTER*/
 
